@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&family=Lobster&family=Roboto:wght@300&display=swap');
 
 :root{
    /* --main-color: #0398E5; */
    --main-color: rgb(3, 3, 3);
    --border-color:  rgba(255, 255, 255, 0.568);
+   --red-color: rgb(212, 24, 24);
 }
 
 *{
@@ -34,7 +35,6 @@ header{
    width: 100%;
    height: 60px;
    padding: 0 20px;
-   margin-top: 20px;
    display: flex;
    position: -webkit-sticky;
    position: sticky;
@@ -43,6 +43,7 @@ header{
    align-items: center;
    background-color: var(--main-color);
    text-transform: uppercase;
+   z-index: 10;
 }
 
 header .login{
@@ -58,12 +59,13 @@ header .login .login-icon{
    display: flex;
    justify-content: space-around;
    font-size: 12px;
+   color: #fff;
 }
 
 header .login:hover{
    background-color: #fff;
    color: var(--main-color);
-   transition: ease-in-out 0.5s;
+   transition: all 0.5s;
 }
 
 header .login:hover i{
@@ -97,19 +99,41 @@ header .menu-items{
    align-items: center;
 }
 
+header .logo-menu{
+   width: 30px;
+   height: 30px;
+}
+
+header .menu-items-logo .menu-logo{
+   height: 100%;
+   width: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+header .menu-items-logo .menu-logo img{
+   width: 90px;
+   height: auto;
+}
+
 header .menu-items > a{
    width: 100px;
+   height: 100%;
    font-weight: bold;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 header .menu-items:hover{
    border-bottom: 4px solid #fff;
-   transition: ease-in-out 0.1s;
+   transition: all 0.1s;
 }
 
 header .sub-nav-sanpham{
    background-color: #000;
-   min-width: 100%;
+   min-width: 1000px;
    height: auto;
    min-height: 100px;
    font-size: 12px;
@@ -121,7 +145,7 @@ header .sub-nav-sanpham{
    top: 60px;
    opacity: 0;
    visibility: hidden;
-   transition: 0.25s linear;
+   transition: all 0.25s linear;
 }
 
 header .menu-items:hover .sub-nav-sanpham{
@@ -172,10 +196,263 @@ header .sub-nav-sanpham .sub-nav-sanpham-items > a:hover{
    width: 10%;
    display: flex;
    justify-content: space-around;
+   color: #fff;
 }
 
-.right-header a i{
+.right-header-icon i{
+   cursor: pointer;
    font-size: 20px;
+}
+
+/* start banner */
+
+.banner{
+   width: 100%;
+   height: auto;
+}
+
+.banner img{
+   width: 100%;
+   height: 846px;
+   background-size: cover;
+   margin-top: -150px;
+}
+
+/* start featured product */
+
+.featured-products{
+   padding: 0 30px;
+}
+
+.featured-products-text{
+   text-align: center;
+   padding: 30px 0;
+   font-size: 40px;
+}
+
+.container-slider{
+   height: auto;
+}
+
+.slide-title{
+   padding: 0 30px;
+   padding-top: 40px;
+   text-transform: capitalize;
+}
+
+.slick-slide{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 50px 30px;
+   width: 100%;
+   height: auto;
+   /* z-index: -1; */
+}
+
+.slide-items{
+   border: 1px solid rgba(0, 0, 0, 0.3);
+   padding: 20px;
+   width: 20%;
+   height: 400px;
+   border-radius: 20px;
+   margin-left: 10px;
+}
+
+.slide-items:hover{
+   border: 2px solid #FFBF00;
+}
+
+.slick-slide .imga{
+   border-bottom: 1px solid #000;
+   padding-bottom: 20px;
+   height: 40%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+}
+
+.slick-slide .imga img{
+   width: 200px;
+   height: 100%;
+}
+
+.slide-items:hover img{
+   transform: scale(1.1);
+   transition: all 0.5s;
+}
+
+.slide-items:hover .product .name-product{
+   color: var(--red-color);
+   transition: all 0.5s;
+}
+
+.slick-slide .product{
+   padding-top: 20px;
+}
+
+.slick-slide .product .name-product{
+   color: #000;
+}
+
+.slick-slide .product .detail{
+   color: rgb(77, 76, 76);
+}
+
+.slick-arrow{
+   position: absolute;
+   background-color: #000;
+   color: #fff;
+   border: none;
+   z-index: 2;
+   padding: 10px 20px;
+   cursor: pointer;
+}
+
+.slick-prev{
+   left: 0;
+}
+
+.slick-next{
+   right: 0;
+}
+
+.slick-dots{
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%);
+   display: flex !important;
+   bottom: 0;
+   gap: 20px;
+}
+
+.slick-dots button{
+   font-size: 0;
+   width: 15px;
+   height: 15px;
+   border-radius: 100rem;
+   background-color: rgb(155, 155, 155);
+   border: none;
+   outline: none;
+   cursor: pointer;
+   transition: all .5s;
+}
+
+.slick-dots .slick-active button{
+   background-color: var(--red-color);
+}
+
+.slide-items .product{
+   margin: 20px 0;
+   min-height: 55%;
+   padding: 20px;
+   border-radius: 20px;
+   position: relative;
+}
+
+.product .name-product{
+   font-size: 26px;
+   margin-bottom: 10px;
+}
+
+.product .coin{
+   position: absolute;
+   bottom: 0;
+   padding-bottom: 10px;
+   color: var(--red-color);
+   font-size: 18px;
+   font-weight: bold;
+}
+
+/* start container-title */
+.container-menu{
+   background-color: #FFBF00;
+   /* padding: 40px 0; */
+}
+
+.tilte-container-menu{
+   margin-top: 600px;
+   padding: 30px;
+}
+
+.container-menu .menu-items{
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-template-rows: repeat(2,1fr);
+   grid-gap: 20px 20px;
+   padding: 50px 30px;
+   
+}
+
+.container-menu .menu-card{
+   /* border: 2px solid rgba(0, 0, 0, 0.3); */
+   border-radius: 20px;
+   padding: 20px 10px;
+   background-color: #fff;
+}
+
+.container-menu .menu-card:hover{
+   border:2px solid var(--red-color);
+}
+
+.container-menu .imga{
+   border-radius: 20px;
+   overflow: hidden;
+   padding: 20px;
+}
+
+.container-menu .menu-card img{
+   width: 100%;
+   height: auto;
+   object-fit: cover;
+}
+
+.container-menu .menu-card:hover img{
+   transform: scale(1.1);
+   cursor: pointer;
+   transition: all 0.5s;
+}
+
+.container-menu .menu-card:hover .title{
+   color: #2374e1;
+   cursor: pointer;
+   transition: all 0.5s;
+}
+
+.menu-items .bottom{
+   padding: 20px 0;
+   position: relative;
+}
+
+.menu-items .bottom .title{
+   font-size: 28px;
+   text-transform: capitalize;
+}
+
+.menu-items .bottom .detail{
+   color: rgba(0, 0, 0, 0.6);
+   padding: 30px 0;
+}
+
+.menu-items .bottom .coins{
+   position: absolute;
+   bottom: 0;
+   font-weight: bold;
+   color: var(--red-color);
+}
+
+/* start slide-headphone */
+
+.slide-headphone .slide-items{
+   height: 500px;
+}
+.slide-headphone .imga{
+   height: 60%;
+}
+
+.slide-headphone .product{
+   min-height: 35%;
 }
 
 /* start model */
@@ -193,12 +470,13 @@ header .sub-nav-sanpham .sub-nav-sanpham-items > a:hover{
 
 .model.open{
    display: flex;
+   z-index: 999;
 }
 
 .model-container{
    background-color: #fff;
    width: 700px;
-   height: 500px;
+   height: 489px;
    border-radius: 20px;
    display: flex;
    justify-content: end;
@@ -221,6 +499,23 @@ header .sub-nav-sanpham .sub-nav-sanpham-items > a:hover{
    border-radius: 20px;
    position: relative;
    min-width: 60%;
+}
+
+.model-container .model-logo{
+   width: 40%;
+}
+
+.model-logo img{
+   width: 100%;
+   height: 100%;
+}
+
+.model-logo .logo-text{
+   text-align: center;
+   margin-bottom: 20px;
+   font-size: 30px;
+   text-transform: capitalize;
+   font-family: 'League Spartan', sans-serif;
 }
 
 .close-form{
@@ -335,21 +630,24 @@ header .sub-nav-sanpham .sub-nav-sanpham-items > a:hover{
 .card-form .card-items{
    position: relative;
    margin-bottom: 20px;
+   color: #fff;
 }
 
 .card-form .card-items input{
    width: 100%;
    height: 35px;
-   border: 1px solid;
+   border: 1px solid #fff;
+   background-color: #000;
+   color: #fff;
    padding: 0 10px;
    border-radius: 10px;
 }
 
 .card-form .card-items label{
    position: absolute;
-   color: #000;
+   color: rgba(255, 255, 255, 0.3);
    font-size: 13px;
-   top: 8px;
+   top: 13px;
    left: 12px;
    display: inline-block;
    transition: all 0.5s;
@@ -358,26 +656,18 @@ header .sub-nav-sanpham .sub-nav-sanpham-items > a:hover{
 }
 
 .card-form .card-items input:focus{
-   border: 1px solid var(--main-color);
+   border: 2px solid #fff;
+   outline: #fff;
+   color: #fff;
 }
 
 .card-form .card-items input:focus ~ label,
 .card-form .card-items input:valid ~ label{
    display: inline-block;
-   padding: 0 5px;
+   padding: 0 10px;
    background-color: #000;
    top: -9px;
    color: #fff;
-   border-radius: 10px;
-}
-
-.card-form .card-items input:focus ~ i,
-.card-form .card-items input:valid ~ i{
-   color: var(--main-color);
-}
-
-.card-form .card-items input:valid ~ i.fa-lock{
-   display: none;
 }
 
 .card-form .card-items i{
@@ -441,17 +731,20 @@ header .sub-nav-sanpham .sub-nav-sanpham-items > a:hover{
    bottom: 0;
    background-color: rgba(0, 0, 0, 0.3);
    justify-content: center;
-   align-items: center;
+   /* align-items: center; */
    display: none;
 }
 
 .search.open{
    display: flex;
+   z-index: 999;
 }
 
 .search-container{
    background-color: #fff;
+   max-height: 200px;
    padding: 70px 60px;
+   margin-top: 30px;
    position: relative;
    display: flex;
    justify-content: center;
@@ -490,11 +783,12 @@ header .sub-nav-sanpham .sub-nav-sanpham-items > a:hover{
    height: 100%;
    box-shadow: 5px 0 24px 5px rgb(112, 110, 110);
    min-width: 500px;
-   transition: ease 0.5s;
+   transition: all 0.5s;
 }
 
 .shopping-form.open{
    right: 0;
+   z-index: 999;
 }
 
 .close-shopping-form

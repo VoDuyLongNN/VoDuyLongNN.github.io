@@ -3,7 +3,13 @@
 <head>
    <title>Đồ Công Nghệ</title>
    <link rel="stylesheet" href="./asset/font/fontawesome-free-6.0.0-web/css/all.min.css">
+   <link
+       rel="stylesheet"
+       type="text/css"
+       href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+     />
    <link rel="stylesheet" href="./style.css">
+   <link rel="icon" href="./asset/picture/logo/logoh3.svg" type="image/x-icon" sizes="32*32">
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +18,7 @@
    <!-- Start Header -->
    <header>
       <div class="login js-login">
-         <a href="#" class="login-icon"><i class="fa-solid fa-user"></i> <p>Đăng Nhập</p></a>
+         <div class="login-icon"><i class="fa-solid fa-user"></i> <p>Đăng Nhập</p></div>
       </div>
       <nav>
          <ul class="menu">
@@ -28,6 +34,15 @@
                      <a href=""><i class="fa-solid fa-laptop"></i>Laptop Dell</a>
                      <a href=""><i class="fa-solid fa-laptop"></i>Laptop Asus</a>
                      <a href=""><i class="fa-solid fa-laptop"></i>Laptop MAC OS</a>
+                  </li>
+                  <li class="sub-nav-sanpham-items">
+                     <p class="sub-nav-sanpham-title">
+                        <a href="">Điện thoại</a>
+                     </p>
+                     <a href=""><i class="fa-solid fa-laptop"></i>Iphone</a>
+                     <a href=""><i class="fa-solid fa-laptop"></i>SamSung</a>
+                     <a href=""><i class="fa-solid fa-laptop"></i>Xiaomi</a>
+                     <a href=""><i class="fa-solid fa-laptop"></i>Vsmart</a>
                   </li>
                   <li class="sub-nav-sanpham-items">
                      <p class="sub-nav-sanpham-title">
@@ -75,21 +90,402 @@
                   </li>
                </ul>
             </li>
-            <li class="menu-items"><a href="#" class="menu-items-logo">Logo </a></li>
+            <li class="menu-items-logo"><a href="#" class="menu-logo"><img src="/asset/picture/logo/logo-icon-title.jpg" alt="" class="logo-menu"></a></li>
             <li class="menu-items"><a href="#" >Hỗ Trợ</a></li>
             <li class="menu-items"><a href="#" >Liên Hệ</a></li>
          </ul>
       </nav>
       <div class="right-header">
-         <a href="#" class="right-header-icon js-right-header-search" title="Tìm Kiếm"><i class="fa-solid fa-magnifying-glass"></i></a>
-         <a href="#" class="right-header-icon js-right-header-card" title="Giỏi Hàng"><i class="fa-solid fa-cart-shopping"></i></a>
+         <div class="right-header-icon js-right-header-search" title="Tìm Kiếm">
+            <i class="fa-solid fa-magnifying-glass"></i></a>
+         </div>
+         <div class="right-header-icon js-right-header-card" title="Giỏi Hàng">
+            <i class="fa-solid fa-cart-shopping"></i>
+         </div>
       </div>
    </header>
    <!-- End Header -->
 
+   <!-- Start Banner -->
+   <section class="banner">
+      <img src="/asset/picture/logo/banner.jpg" alt="">
+   </section>
+   <!-- End Banner -->
+
+   <!-- Start Featured Products -->
+   <section class="featured-products">
+
+      <h1 class="featured-products-text">Sản Phẩm Nổi Bật</h1>
+
+      <div class="container-slider slide-laptop">
+         <h1 class="slide-title">Laptop nổi bật</h1>
+         <div class="slick-slide">
+            <div class="slide-items">
+               <a href="">
+                  <div class="imga">
+                     <img src="./asset/picture/product/laptop/asus-tuf-gaming-fx506lh-i5-hn188w-120122-121947-600x600.jpg" alt="">
+                  </div>
+               </a>
+               <div class="product">
+                  <a href="">
+                     <p class="name-product">Laptop</p>
+                  </a>
+                  <p class="detail">Thông tin sản phẩm</p>
+                  <p class="coin">15.000.000 đ</p>
+               </div>
+            </div>       
+
+            <div class="slide-items">
+               <a href="" class="slide-top">
+                  <div class="imga">
+                     <img src="./asset/picture/product/laptop/asuswebp.webp" alt="">
+                  </div>
+               </a>
+               <div class="product">
+                  <a href="" class="slide-top">
+                     <p class="name-product">Laptop</p>
+                  </a>
+                  <p class="detail">Thông tin sản phẩm</p>
+                  <p class="coin">15.000.000 đ</p>
+               </div>
+            </div>
+
+            <div class="slide-items">
+               <a href="" class="slide-top">
+                  <div class="imga">
+                     <img src="./asset/picture/product/laptop/intel-nuc-m15-i7-bbc710bcuxbc1-thumb-1-600x600.jpg" alt="">
+                  </div>
+               </a>
+               <div class="product">
+                  <a href="">
+                     <p class="name-product">Laptop</p>
+                  </a>
+                  <p class="detail">Thông tin sản phẩm</p>
+                  <p class="coin">15.000.000 đ</p>
+               </div>
+            </div>
+
+            <div class="slide-items">
+               <a href="" class="slide-top">
+                  <div class="imga">
+                     <img src="./asset/picture/product/laptop/lenovo-gaming-legion-5-15ith6-i7-11800h-16gb-512gb-600x600.jpg" alt="">
+                  </div>
+               </a>
+               <div class="product">
+                  <a href="">
+                     <p class="name-product">Laptop</p>
+                  </a>
+                  <p class="detail">Thông tin sản phẩm</p>
+                  <p class="coin">15.000.000 đ</p>
+               </div>
+            </div>
+
+            <div class="slide-items">
+               <a href="" class="slide-top">
+                  <div class="imga">
+                     <img src="./asset/picture/product/laptop/macbook-air-m1-2020-db-800x600-1607604365.png" alt="">
+                  </div>
+               </a>
+               <div class="product">
+                  <a href="">
+                     <p class="name-product">Laptop</p>
+                  </a>
+                  <p class="detail">Thông tin sản phẩm</p>
+                  <p class="coin">15.000.000 đ</p>
+               </div>
+            </div>
+
+            <div class="slide-items">
+               <a href="" class="slide-top">
+                  <div class="imga">
+                     <img src="./asset/picture/product/laptop/macbook.jpg" alt="">
+                  </div>
+               </a>
+               <div class="product">
+                  <a href="">
+                     <p class="name-product">Laptop</p>
+                  </a>
+                  <p class="detail">Thông tin sản phẩm</p>
+                  <p class="coin">15.000.000 đ</p>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="container-menu">
+         <h1 class="slide-title tilte-container-menu">Điện thoại bán chạy</h1>
+         <div class="menu-items">
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone/iphone-13-pro-max-gold-1-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">23.999.999 đ</p>
+               </div>
+            </div>
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone/iphone-xi-do-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">23.999.999 đ</p>
+               </div>
+            </div>
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone/oppo-a95-4g-bac-2-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">23.999.999 đ</p>
+               </div>
+            </div>
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone//realme-9-Pro-blue-thumb-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">23.999.999 đ</p>
+               </div>
+            </div>
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone/realme-c21y-blue-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">23.999.999 đ</p>
+               </div>
+            </div>
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone/Samsung-Galaxy-S21-FE-tim-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">23.999.999 đ</p>
+               </div>
+            </div>
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone/Xiaomi-11T-White-1-2-3-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">23.999.999 đ</p>
+               </div>
+            </div>
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone/samsung-galaxy-z-fold-3-silver-1-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">23.999.999 đ</p>
+               </div>
+            </div>
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone/Xiaomi-11T-White-1-2-3-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">23.999.999 đ</p>
+               </div>
+            </div>
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone/vivo-x70-pro-xanh-hong-1-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">23.999.999 đ</p>
+               </div>
+            </div>
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone/samsung-galaxy-s21-trang-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">28.999.999 đ</p>
+               </div>
+            </div>
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone/iphone-xi-do-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">23.999.999 đ</p>
+               </div>
+            </div>
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone/Samsung-Galaxy-S21-FE-tim-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">23.999.999 đ</p>
+               </div>
+            </div>
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone/iphone-13-midnight-2-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">23.999.999 đ</p>
+               </div>
+            </div>
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone/samsung-galaxy-z-fold-3-silver-1-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">23.999.999 đ</p>
+               </div>
+            </div>
+            <div class="menu-card">
+               <div class="imga">
+                  <img src="./asset/picture/product/phone/iphone-13-mini-128gb-xanh-la-090322-011146-600x600.jpg" alt="">
+               </div>
+               <div class="bottom">
+                  <h3 class="title">Điện thoại</h3>
+                  <p class="detail">Mô tả</p>
+                  <p class="coins">23.999.999 đ</p>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="container-slider slide-headphone">
+         <h1 class="slide-title">Tai nghe nổi bật</h1>
+         <div class="slick-slide">
+            <div class="slide-items">
+               <a href="">
+                  <div class="imga">
+                     <img src="./asset/picture/product/headphone/airpods-3-hop-sac-khong-day-thumb-600x600.jpeg" alt="">
+                  </div>
+               </a>
+               <div class="product">
+                  <a href="">
+                     <p class="name-product">Laptop</p>
+                  </a>
+                  <p class="detail">Thông tin sản phẩm</p>
+                  <p class="coin">15.000.000 đ</p>
+               </div>
+            </div>       
+
+            <div class="slide-items">
+               <a href="" class="slide-top">
+                  <div class="imga">
+                     <img src="./asset/picture/product/headphone/bluetooth-true-wireless-ava-ds200a-wb-thumb-600x600.png" alt="">
+                  </div>
+               </a>
+               <div class="product">
+                  <a href="" class="slide-top">
+                     <p class="name-product">Laptop</p>
+                  </a>
+                  <p class="detail">Thông tin sản phẩm</p>
+                  <p class="coin">15.000.000 đ</p>
+               </div>
+            </div>
+
+            <div class="slide-items">
+               <a href="" class="slide-top">
+                  <div class="imga">
+                     <img src="./asset/picture/product/headphone/bluetooth-true-wireless-galaxy-buds-pro-bac-thumb-600x600.jpeg" alt="">
+                  </div>
+               </a>
+               <div class="product">
+                  <a href="">
+                     <p class="name-product">Laptop</p>
+                  </a>
+                  <p class="detail">Thông tin sản phẩm</p>
+                  <p class="coin">15.000.000 đ</p>
+               </div>
+            </div>
+
+            <div class="slide-items">
+               <a href="" class="slide-top">
+                  <div class="imga">
+                     <img src="./asset/picture/product/headphone/bluetooth-true-wireless-rezo-f15-thumb-600x600.jpeg" alt="">
+                  </div>
+               </a>
+               <div class="product">
+                  <a href="">
+                     <p class="name-product">Laptop</p>
+                  </a>
+                  <p class="detail">Thông tin sản phẩm</p>
+                  <p class="coin">15.000.000 đ</p>
+               </div>
+            </div>
+
+            <div class="slide-items">
+               <a href="" class="slide-top">
+                  <div class="imga">
+                     <img src="./asset/picture/product/headphone/bluetooth-true-wireless-rezo-qt13-thumb1-600x600.jpeg" alt="">
+                  </div>
+               </a>
+               <div class="product">
+                  <a href="">
+                     <p class="name-product">Laptop</p>
+                  </a>
+                  <p class="detail">Thông tin sản phẩm</p>
+                  <p class="coin">15.000.000 đ</p>
+               </div>
+            </div>
+
+            <div class="slide-items">
+               <a href="" class="slide-top">
+                  <div class="imga">
+                     <img src="./asset/picture/product/headphone/tai-nghe-bluetooth-kanen-k6-thumb-600x600.jpeg" alt="">
+                  </div>
+               </a>
+               <div class="product">
+                  <a href="">
+                     <p class="name-product">Laptop</p>
+                  </a>
+                  <p class="detail">Thông tin sản phẩm</p>
+                  <p class="coin">15.000.000 đ</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- End Featured Products -->
+
    <!-- Start Model -->
    <div class="model js-model">
       <div class="model-container">
+
+         <div class="model-logo">
+            <p class="logo-text">
+               hardware technology library
+            </p>
+            <img src="/asset/picture/logo/logo-black-boder.svg" alt="">
+         </div>
+
          <div class="form-login">
             <div class="close-form js-close-form">
                <i class="fa-solid fa-xmark"></i>
@@ -111,7 +507,7 @@
                <form action="">
                   <div class="card-items">
                      <input type="text" required>
-                     <label for="">Tài khoảng</label>
+                     <label for="">Tài khoản</label>
                      <i class="fas fa-user-tie"></i>
                   </div>
                   <!-- <div class="card-items">
@@ -145,7 +541,7 @@
          <div class="close-search js-close-search">
             <i class="fa-solid fa-xmark"></i>
          </div>
-         <input type="search" name="" id="" class="input-search" placeholder="Tìm kiếm sản phẩm">
+         <input type="search" name="" id="" class="input-search" placeholder="Bạn muốn tìm kiếm gì?">
          <div class="search-icon-form js-search-icon">
             <i class="fa-solid fa-magnifying-glass"></i>
          </div>
@@ -164,57 +560,22 @@
    </div>
    <!-- End Cart Shopping -->
 
-   <script>
+   <script src="./asset/js/script.js"></script>
 
-      // javaScript login form
-      const loginDiv = document.querySelector('.js-login');
-      const model = document.querySelector('.js-model');
-      const closeFormLogin = document.querySelector('.js-close-form');
+   <script
+     type="text/javascript"
+     src="https://code.jquery.com/jquery-1.11.0.min.js"
+   ></script>
+   <script
+     type="text/javascript"
+     src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+   ></script>
+   <script
+     type="text/javascript"
+     src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+   ></script>
 
-      function showFormLogin(){
-         model.classList.add('open');
-      }
-
-      function hideFormLogin(){
-         model.classList.remove('open');
-      }
-
-      loginDiv.addEventListener('click', showFormLogin);
-      closeFormLogin.addEventListener('click', hideFormLogin);
-
-      // javaScript search form
-      const searchIcon = document.querySelector('.js-right-header-search');
-      const searchForm = document.querySelector('.js-search');
-      const closeSearchForm = document.querySelector('.js-close-search');
-
-      function showFormSearch(){
-         searchForm.classList.add('open');
-      }
-
-      function hideFormSearch(){
-         searchForm.classList.remove('open');
-      }
-
-      searchIcon.addEventListener('click', showFormSearch);
-      closeSearchForm.addEventListener('click', hideFormSearch);
-
-
-      // javaScript card shopping form
-      const cardIcon = document.querySelector('.js-right-header-card');
-      const shoppingForm = document.querySelector('.js-shopping-form');
-      const closeShoppingForm = document.querySelector('.js-close-shopping-form');
-
-      function showFormShopping(){
-         shoppingForm.classList.add('open');
-      }
-
-      function hideFormShopping(){
-         shoppingForm.classList.remove('open');
-      }
-
-      cardIcon.addEventListener('click', showFormShopping);
-      closeShoppingForm.addEventListener('click', hideFormShopping)
-   </script>
+   <script src="./asset/js/slickSlider.js"></script>
 
 </body>
 </html>
