@@ -1,0 +1,249 @@
+
+:root{
+   --text-color: #6e6e73;
+   --color-link: #3284d6;
+   --text-color-yellow: #c09440;
+   --shadow-color: rgba(126, 124, 124, 0.562);
+}
+
+/*  Start Slogan */
+.slogan{
+   padding: 100px 250px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.slogan-text{
+   font-size: 30px;
+   color: var(--text-color);
+   text-align-last: left;
+   line-height: 60px;
+}
+
+.help-contact{
+   display: flex;
+   align-items: center;
+   min-width: 200px;
+   margin-bottom: 20px;
+   cursor: pointer;
+}
+
+.help-contact:hover a{
+   text-decoration: underline;
+}
+
+.help-contact img{
+   padding: 0 10px;
+}
+
+.help-contact span p{
+   font-weight: bold;
+   padding-bottom: 10px;
+}
+
+.help-contact span a{
+   color: var(--color-link);
+}
+
+/* Start List Product */
+.list-product{
+   padding: 50px 100px 100px;
+}
+
+.list-product-menu{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.list-product-menu .title{
+   font-size: 25px;
+   font-weight: bold;
+}
+
+.list-product-menu ul{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-bottom: 20px;
+   border-bottom: 2px solid var(--shadow-color);
+}
+
+.list-product-menu .list-items{
+   padding: 0 20px;
+}
+
+.list-items button{
+   background-color: #fff;
+   border: 1px solid var(--text-color);
+   border-radius: 20px;
+   padding: 10px 20px;
+   font-size: 15px;
+   cursor: pointer;
+   transition: all 0.25s linear;
+}
+
+.list-product-menu .list-items button:hover{
+   background-color: #000;
+   color: #fff;
+}
+
+/* Start Phone product */
+.product-container{
+   padding: 0 100px 100px;
+}
+
+.top-container{
+   padding-bottom: 100px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.top-container ul{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.top-container .list-items{
+   padding: 0 10px;
+}
+
+.top-container .list-items button{
+   font-size: 12px;
+}
+
+.top-container .list-items button:hover{
+   background-color: #000;
+   color: #fff;
+}
+
+.product-container .title{
+   color: var(--text-color-yellow);
+   
+}
+
+.menu-items{
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   grid-gap: 20px;
+}
+
+.menu-items .menu-card{
+   padding: 20px;
+   overflow: hidden;
+   border-radius: 20px;
+   box-shadow: 0  0 20px 1px rgba(126, 124, 124, 0.562);
+   transition: all 0.25s linear;
+   cursor: pointer;
+}
+
+.menu-items .menu-card:hover{
+   transform: scale(1.05);
+}
+
+.menu-items .menu-card img{
+   width: 100%;
+   height: auto;
+}
+
+.menu-card .bottom{
+   padding: 30px;
+   display: flex;
+   flex-direction: column;
+
+}
+
+.menu-card .bottom .title{
+   padding-bottom: 30px;
+   color: #000;
+}
+
+.menu-card .bottom .detail{
+   color: var(--text-color);
+   padding-bottom: 20px;
+}
+
+/* load more */
+.menu-load-more{
+   padding-top: 20px;
+   display: none;
+}
+
+.menu-load-more.open{
+   display: grid;
+}
+
+.all-product{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.all-product button{
+   padding: 10px 30px;
+   border: 1px solid var(--text-color);
+   min-width: 230px;
+   background-color: #fff;
+   color: #000;
+   border-radius: 20px;
+   font-size: 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   cursor: pointer;
+   transition: all 0.25s linear;
+}
+
+.all-product button:hover{
+   background-color: #000;
+   color: #fff;
+}
+
+button.see-more{
+   margin-left: 50%;
+   transform: translate(-50%);
+   margin-top: 30px;
+   padding: 10px 30px;
+   border: 1px solid var(--text-color);
+   background-color: #fff;
+   color: #000;
+   border-radius: 20px;
+   font-size: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   transition: all 0.25s linear;
+}
+
+button.see-more.remove{
+   display: none;
+}
+
+button.see-more:hover{
+   background-color: var(--text-color-yellow);
+}
+
+button.collapse{
+   display: none;
+}
+
+button.collapse.open{
+   display: flex;
+}
+
+/* Start banner */
+.banner{
+   padding: 0px 200px;
+}
+
+.banner img{
+   width: 100%;
+   height: auto;
+   object-fit: cover;
+}
+
