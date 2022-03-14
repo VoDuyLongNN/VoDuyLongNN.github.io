@@ -71,11 +71,11 @@
 .slick-slide .imga img{
    width: 200px;
    height: 100%;
+   transition: all 0.5s linear;
 }
 
 .slide-items:hover img{
    transform: scale(0.8);
-   transition: all 0.5s;
 }
 
 .slide-items:hover .product .name-product{
@@ -185,6 +185,7 @@
    border-radius: 20px;
    padding: 20px 10px;
    background-color: #fff;
+   transition: all 0.25s linear;
 }
 
 .container-menu .menu-card:hover{
@@ -201,12 +202,12 @@
    width: 100%;
    height: auto;
    object-fit: cover;
+   transition: all 0.25s linear;
 }
 
 .container-menu .menu-card:hover img{
    transform: scale(1.1);
    cursor: pointer;
-   transition: all 0.5s;
 }
 
 .container-menu .menu-card:hover .title{
@@ -290,12 +291,12 @@ button.load-more{
    display: flex;
    justify-content: space-around;
    align-items: center;
+   transition: all 0.25s linear;
 }
 
 button.load-more:hover{
    align-items: flex-start;
    background-color: #c09440;
-   transition: 0.25s linear;
    color: #fff;
 }
 
