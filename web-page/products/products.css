@@ -4,6 +4,7 @@
    --color-link: #3284d6;
    --text-color-yellow: #c09440;
    --shadow-color: rgba(126, 124, 124, 0.562);
+   --box-shadow: 0  0 20px 1px rgba(126, 124, 124, 0.562);
 }
 
 /*  Start Slogan */
@@ -241,9 +242,315 @@ button.collapse.open{
    padding: 0px 200px;
 }
 
+.banner .title{
+   text-align: center;
+   padding-bottom: 30px;
+   font-size: 40px;
+   text-transform: uppercase;
+   word-spacing: 30px;
+   line-height: 60px;
+   color: var(--text-color);
+}
+
 .banner img{
    width: 100%;
    height: auto;
    object-fit: cover;
 }
 
+/* Start Laptop Product */
+.top-container-laptop{
+   padding: 10px 50px 0;
+}
+
+.container-product-slide{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 50px 20px;
+   width: 100%;
+   background-color: #fff;
+   margin-bottom: 100px;
+}
+
+.container-product-slide .product-item{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   border-radius: 10px;
+   overflow: hidden;
+   box-shadow: var(--box-shadow);
+   max-height: 600px;
+   margin: 30px 15px;
+   cursor: pointer;
+   transition: all 0.25s linear;
+}
+
+.container-product-slide .product-item:hover{
+   transform: scale(1.05);
+}
+
+.slick-arrow{
+   width: 30px;
+   height: 30px;
+   border-radius: 100%;
+   position: absolute;
+   background-color: #000;
+   color: #fff;
+   border: none;
+   z-index: 2;
+   /* padding: 10px 20px; */
+   cursor: pointer;
+}
+
+.slick-prev{
+   left: 10px;
+}
+
+.slick-next{
+   right: 10px;
+}
+
+.slick-dots{
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%);
+   display: flex !important;
+   bottom: 20px;
+   gap: 20px;
+}
+
+.slick-dots button{
+   font-size: 0;
+   width: 15px;
+   height: 15px;
+   border-radius: 100rem;
+   background-color: rgb(155, 155, 155);
+   border: none;
+   outline: none;
+   cursor: pointer;
+   transition: all .5s;
+}
+
+.slick-dots .slick-active button{
+   background-color: var(--red-color);
+}
+
+
+.container-product-slide .imga{
+   width: 350px;
+   height: auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+}
+
+.container-product-slide .imga img{
+   width: 250px;
+   height: 180px;
+}
+
+.container-product-slide .bottom{
+   width: 100%;
+   height: auto;
+   padding: 40px 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: flex-start;
+}
+
+.container-product-slide .bottom .title{
+   font-size: 20px;
+   font-weight: bold;
+   padding: 20px 0;
+}
+
+.container-product-slide .bottom .details{
+   color: var(--text-color);
+   padding-bottom: 15px;
+}
+
+.container-product-slide .bottom .price{
+   padding-top: 30px;
+   font-size: 17px;
+   color: #000;
+   font-weight: bold;
+}
+
+/* start laptop list product */
+/* laptop gaming */
+.list-laptop-product{
+   padding: 150px 0;
+   /* margin-top: 500px; */
+   background-color: #25304b;
+}
+
+.container-list{
+
+}
+
+.container-list .type{
+   padding: 50px 150px;
+   text-align: center;
+   font-size: 40px;
+   color: #fff;
+}
+
+.container-list .bottom-container{
+   padding: 30px 50px 0;
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-gap: 30px;
+   margin: 0 20px;
+   border-radius: 20px;
+}
+
+.bottom-container-loadmore{
+   display: none !important;
+}
+
+.bottom-container-loadmore.open{
+   display: grid !important;
+}
+
+.bottom-container .menu-card{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   max-height: 400px;
+   box-shadow: var(--box-shadow);
+   border-radius: 20px;
+   background-color: #fff;
+   transition: all 0.5s linear;
+   cursor: pointer;
+}
+
+.bottom-container .menu-card:hover{
+   transform: rotate(3deg);
+}
+
+.bottom-container .imga{
+   padding: 30px 20px;
+}
+
+.bottom-container img{
+   width: 100%;
+   height: auto;
+}
+
+.bottom-container .bottom{
+   padding: 30px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.bottom-container .bottom .title{
+   padding: 20px 0;
+}
+
+.btnClose{
+   display: none;
+}
+
+/* laptop macbook */
+.list-laptop-macbook{
+   background-color: #fff;
+   padding: 20px 0;
+}
+
+.list-laptop-macbook .type{
+   color: #000;
+}
+
+/* office laptop */
+.list-laptop-office{
+   background-color: #fff;
+   padding: 20px 0;
+}
+
+.list-laptop-office .type{
+   color: #000;
+}
+
+.list-laptop-office  .btn-type-laptop-office{
+   background-color: #fff;
+   border: 1px solid var(--text-color);
+   border-radius: 20px;
+   padding: 10px 20px;
+   font-size: 15px;
+   cursor: pointer;
+   transition: all 0.25s linear;
+   margin: 20px 0;
+   margin-left: 90%;
+}
+
+.list-laptop-office  .btn-type-laptop-office:hover{
+   background-color: #000;
+   color: #fff;
+}
+
+.list-laptop-office  .all-laptop{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.all-laptop button{
+   border: 1px solid var(--text-color);
+   color: #000;
+   background-color: #fff;
+   padding: 15px 40px;
+   font-size: 18px;
+   font-weight: bold;
+   border-radius: 20px;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   transition: all 0.25s linear;
+}
+
+.all-laptop button:hover{
+   background-color: #000;
+   color: #fff;
+}
+
+/* Start Screen Product */
+.container-product{
+   background-color: var(--text-color);
+
+}
+.container-product .title{
+   text-align: center;
+   /* margin-top: 30px; */
+   color: #fff;
+   font-size: 40px;
+   padding: 50px 0;
+   text-transform: uppercase;
+   word-spacing: 30px;
+}
+
+.container-product .container-screen-slide {
+
+}
+
+.container-screen-slide .bottom{
+   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.container-screen-slide .bottom .title{
+   color: #000;
+   word-spacing: normal;
+   text-transform: capitalize;
+}
+
+.all-pc{
+   margin-bottom: 70px;
+}
+
+.all-pc button{
+   margin-left: 80%;
+}
