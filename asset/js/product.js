@@ -17,3 +17,14 @@ function hideMenuLoadMore(){
 
 btnSeeMore.addEventListener('click', showMenuLoadMore)
 btnCollapse.addEventListener('click', hideMenuLoadMore)
+
+//see more button laptop
+const btnLoadmoreLaptop = document.querySelector('.js-see-more-laptop')
+const loadMoreProductLaptop = document.querySelector('.js-container-loadmore')
+
+function showListProductLaptop(){
+   loadMoreProductLaptop.classList.add('open')
+   btnLoadmoreLaptop.classList.add('remove')
+}
+
+btnLoadmoreLaptop.addEventListener('click', showListProductLaptop)
