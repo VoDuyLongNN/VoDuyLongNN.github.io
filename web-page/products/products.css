@@ -554,3 +554,86 @@ button.collapse.open{
 .all-pc button{
    margin-left: 80%;
 }
+
+/* Start Mouse Product */
+.mouse-product-container .title{
+   font-size: 30px;
+   padding: 0 40px;
+   text-transform: capitalize;
+   max-width: 300px;
+}
+
+.filter{
+   padding: 30px 0;
+   display: flex;
+   /* justify-content: space-between; */
+   align-items: center;
+   padding-left: 40px;
+}
+
+.filter button{
+   padding: 10px 15px;
+   border: 1px solid rgba(0, 0, 0, 0.212);
+   background-color: #fff;
+   font-size: 17px;
+   display: flex;
+   align-items: center;
+   color: rgb(29, 29, 29);
+   cursor: pointer;
+}
+
+.filter button i{
+   padding-left: 10px;
+}
+
+.btn-filter{
+   margin-right: 20px;
+}
+
+.filter > ul{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.filter .filter-items{
+   padding: 0 20px;
+}
+
+.mouse-product-container{
+   padding-bottom: 100px;
+}
+
+.mouse-product-container .bottom-container{
+   grid-gap: 0;
+   border-radius: 0;
+}
+
+.mouse-product-container .bottom-container .menu-card{
+   border-radius: 0;
+   min-height: 450px;
+   display: block;
+   /* transition: all 0.25s linear; */
+}
+
+.mouse-product-container .bottom-container .menu-card:hover{
+   transform: rotate(0deg);
+   border: 1px solid #000;
+}
+
+.mouse-product-container .bottom-container .title{
+   font-size: 17px;
+}
+
+.mouse-product-container .all-product{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* Start Headphoen Product */
+.keyboard-product-container h1.title{
+   padding-left: 40px;
+   font-size: 30px;
+   text-transform: capitalize;
+}
