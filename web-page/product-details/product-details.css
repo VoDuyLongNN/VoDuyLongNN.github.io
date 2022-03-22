@@ -1,0 +1,154 @@
+:root{
+   --text-color: #6e6e73;
+   --color-link: #3284d6;
+   --text-color-yellow: #c09440;
+   --shadow-color: rgba(126, 124, 124, 0.562);
+   --box-shadow: 0  0 20px 1px rgba(126, 124, 124, 0.562);
+   --price-color-text: #0E3EDA;
+}
+
+
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+.container{
+   padding: 50px 150px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.imga-product{
+   width: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.imga-product img{
+   width: 450px;
+   height: auto;
+}
+
+.product-details{
+   width: 50%;
+   padding: 20px 10px;
+}
+
+.product-name{
+   padding-bottom: 20px;
+}
+
+.product-details .price{
+   display: flex;
+   align-items: center;
+   padding: 20px 0;
+}
+
+.product-details .cost{
+   color: var(--text-color);
+   text-decoration: line-through;
+   padding-right: 30px;
+}
+
+.product-details .sale{
+   font-size: 25px;
+   color: var(--price-color-text);
+   font-weight: bold;
+}
+
+.installment{
+   padding: 5px;
+   font-size: 15px;
+   background-color: #E9E5D6;
+   border-radius: 4px;
+   margin-left: 20px;
+}
+
+.product-description{
+   width: 100%;
+}
+
+.description-text{
+   padding: 20px 0 10px;
+   color: var(--text-color);
+}
+
+.product-description span{
+   width: 100%;
+   display: flex;
+   align-items: center;
+}
+
+.product-description span p{
+   padding:10px 0;
+}
+
+.product-description span p:first-child{
+   padding-right: 30px;
+   min-width: 150px;
+}
+
+.evuluate{
+   padding: 20px 0;
+}
+
+.evuluate .evuluate-text{
+   color: var(--price-color-text);
+   display: inline-block;
+   padding-right: 15px;
+}
+
+.evuluate .evuluate-icon{
+   display: inline-block;
+   font-size: 13px;
+   color: #ee4d2d;
+}
+
+.btn-shopping{
+   display: block;
+   width: 500px;
+   padding: 15px;
+   font-size: 20px;
+   background-color: #fff;
+   border: none;
+   cursor: pointer;
+   color: #fff;
+   text-transform: capitalize;
+}
+
+.btn-add-cart{
+   background-color: var(--price-color-text);
+   margin-bottom: 20px;
+}
+
+.btn-buy-now{
+   border: 2px solid #ee4d2d;
+   color: #ee4d2d;
+   transition: all 0.25s linear;
+}
+
+.btn-buy-now:hover{
+   background-color: #ee4d2d;
+   color: #fff;
+}
+
+.product-detailed-description{
+   padding: 50px 10px;
+   margin: 0 150px;
+   /* max-width: 500px; */
+
+}
+
+.product-detailed-description h4{
+   padding: 0 0 30px;
+   font-size: 25px;
+   font-weight: bold;
+}
+
+.product-detailed-description p{
+   line-height: 30px;
+   font-size: 20px;
+}
