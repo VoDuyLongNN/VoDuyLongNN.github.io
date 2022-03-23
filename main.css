@@ -40,7 +40,7 @@ header{
    align-items: center;
    background-color: var(--main-color);
    text-transform: uppercase;
-   z-index: 10;
+   z-index: 99;
 }
 
 header ul a{
@@ -300,6 +300,7 @@ footer ul a{
    background-color: rgba(0, 0, 0, 0.3);
    justify-content: center;
    align-items: center;
+   display: flex;
    display: none;
 }
 
@@ -309,6 +310,7 @@ footer ul a{
 }
 
 .model-container{
+   position: relative;
    background-color: #fff;
    width: 700px;
    height: 489px;
@@ -333,11 +335,28 @@ footer ul a{
    padding: 30px 40px;
    border-radius: 20px;
    position: relative;
+   position: absolute;
+   top: 0;
+   right: 0;
    min-width: 60%;
+}
+
+.form-login.hide-form-login{
+   left: 0;
+   right: auto;
+   display: none;
 }
 
 .model-container .model-logo{
    width: 40%;
+   position: absolute;
+   /* top: 0; */
+   left: 0;
+}
+
+.model-logo.remove-model-logo{
+   right: 0;
+   left: auto;
 }
 
 .model-logo img{

@@ -14,6 +14,7 @@ function hideFormLogin(){
 loginDiv.addEventListener('click', showFormLogin);
 closeFormLogin.addEventListener('click', hideFormLogin);
 
+
 // javaScript search form
 const searchIcon = document.querySelector('.js-right-header-search');
 const searchForm = document.querySelector('.js-search');
