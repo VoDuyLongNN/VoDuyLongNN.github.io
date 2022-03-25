@@ -18,7 +18,7 @@ section{
    display: flex;
    justify-content: center;
    align-items: center;
-   background-image: linear-gradient(135deg,#61A4BC,#5B7DB1,#05595B);
+   /* background-image: linear-gradient(135deg,#61A4BC,#5B7DB1,#05595B); */
 }
 
 .container{
@@ -108,12 +108,12 @@ option{
    align-items: center;
 }
 
-div.submit{
+div.submit-input{
    margin-top: 60px;
    text-align: center;
 }
 
-div.submit input{
+div.submit-input input{
    width: 100%;
    border: none;
    background-color: #000;
@@ -127,7 +127,7 @@ div.submit input{
    transition: all 0.25s linear;
 }
 
-div.submit input:hover{
+div.submit-input input:hover{
    background-color: #fff;
    color: #000;
 }

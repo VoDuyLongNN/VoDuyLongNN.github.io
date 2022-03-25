@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>Đăng Ký Tài Khoảng</title>
+      <title>Đăng Ký Tài Khoản</title>
       <link rel="stylesheet" href="../../asset/font/fontawesome-free-6.0.0-web/css/all.min.css">
       <link rel="stylesheet" href="../../main.css">
       <link rel="stylesheet" href="./Signup.css">
@@ -104,7 +104,7 @@
 
    <section>
       <div class="container">
-         <h1 class="title">Đăng kí tài khoảng</h1>
+         <h1 class="title">Đăng kí tài khoản</h1>
          <div class="form-signup">
             <form action="../../php/signup.php" method="post">
                <div class="card">
@@ -118,11 +118,11 @@
                <div class="card gender">
                   <label for="">Giới tính:</label>
                   <span class="gender">
-                     <input type="radio" name="gender" id="man" class="radio-input" required>
+                     <input type="radio" name="gender" id="man" value="man" class="radio-input" required>
                      <label for="man">Nam</label>
-                     <input type="radio" name="gender" id="women" class="radio-input">
+                     <input type="radio" name="gender" id="women" value="woman" class="radio-input">
                      <label for="women">Nữ</label>
-                     <input type="radio" name="gender" id="other" class="radio-input">
+                     <input type="radio" name="gender" id="other" value="other" class="radio-input">
                      <label for="other">Khác</label>
                   </span>
                </div>
@@ -160,14 +160,18 @@
                   </div>
                </div>
                <div class="card">
-                  <label for="userName">Tên đăng nhập:</label>
-                  <input type="text" name="userName" id="userName" placeholder="Tên đăng nhập" required> 
+                  <label for="userName">Email đăng kí tài khoản:</label>
+                  <input type="email" name="userName" id="userName" placeholder="Email đăng kí tài khoản" required> 
                </div>
                <div class="card">
-                  <label for="password">Mật khẩu:</label>
+                  <label for="password">Mật khẩu email:</label>
                   <input type="password" name="password" id="password" placeholder="Mật khẩu" required>
                </div>
-               <div class="card submit">
+               <div class="card">
+                  <label for="passwordSignup">Mật khẩu đăng nhập:</label>
+                  <input type="password" name="passwordSignup" id="passwordSignup" placeholder="Mật khẩu" required>
+               </div>
+               <div class="card submit-input">
                   <input type="submit" value="Đăng Ký">
                </div>
             </form>
