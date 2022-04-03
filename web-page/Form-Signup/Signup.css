@@ -15,10 +15,22 @@ body{
 }
 
 section{
+   width: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
+   position: relative;
    /* background-image: linear-gradient(135deg,#61A4BC,#5B7DB1,#05595B); */
+}
+
+section > img{
+   width: 400px;
+   position: absolute;
+   margin-left: -65%;
+}
+
+section > img.fix{
+   margin-right: -130%;
 }
 
 .container{
