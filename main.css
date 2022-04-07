@@ -15,6 +15,7 @@
    list-style: none;
    text-decoration: none;
    font-family: 'League Spartan', sans-serif;
+   scroll-behavior: smooth;
 }
 
 html{
@@ -24,6 +25,18 @@ html{
 
 body{
    height: 100%;
+}
+
+/* back to top */
+.back-top{
+   position: fixed;
+   bottom: 40px;
+   right: 40px;
+}
+
+.back-top i{
+   font-size: 50px;
+   color: #3284d6;
 }
 
 /* Start Header */

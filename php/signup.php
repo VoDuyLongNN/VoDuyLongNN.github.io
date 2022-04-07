@@ -8,15 +8,11 @@
    $conn->select_db($csdl) or die('Chưa có CSDL');
    $conn->query("SET NAMES 'utf8'");
 
-   $email = "SELECT Email FROM khachhang";
-   $runEmail = $conn->query($email);
-
    if(isset($_POST['firstName'])){
       $firstName = $_POST['firstName'];
       $lastName = $_POST['lastName'];
       $gender = $_POST['gender'];
       $born = $_POST['born'];
-
       $provice = $_POST['province'];
       $district = $_POST['district'];
       $ward = $_POST['ward'];
@@ -25,27 +21,21 @@
       $password = $_POST['password'];
       $passwordSignup = $_POST['passwordSignup'];
 
-      $sql = "insert into khachhang (FirstName,LastName,Gender,Born,Address,Email,EmailPass,PassSignup) values ('$firstName','$lastName','$gender','$born','$address','$userName','$password','$passwordSignup')";
-
-      while($row = $runEmail->fetch_array())
+      $sql = "SELECT * FROM khachhang WHERE Email = '$userName' LIMIT 1";
+      $run = $conn->query($sql);
+      $count = $run->num_rows;
+      if($count == 0)
       {
-         if(in_array($userName,$row))
-         {
-            echo "Email này đã được đăng kí từ trước";
-            break;
-         }
-         else
-         {
-            $run = $conn->query($sql);
-            echo "<center>";
-            echo "Đăng kí thành công";
-            echo "</center>";
-         }
-         foreach($row as $key=>$value)
-         {
-            echo $key.'-'.$value;
-            echo '<br/>';
-         }
+         echo 'Dang ki thanh cong';
+         $add = "insert into khachhang (FirstName,LastName,Gender,Born,Address,Email,EmailPass,PassSignup) values ('$firstName','$lastName','$gender','$born','$address','$userName','$password','$passwordSignup')";
+         $conn->query($add);
+      }
+      else
+      {
+         // echo '<script>alert("Email nay da ton tai") <script/>';
+         echo '<script>';
+            alert("Email nay da ton tai");
+         echo '</script>';
       }
    }
 ?>
