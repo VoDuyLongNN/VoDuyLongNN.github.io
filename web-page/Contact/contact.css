@@ -1,0 +1,109 @@
+h1.contact-text{
+   text-align: center;
+   padding: 70px 0 0;
+   display: block;
+   font-size: 50px;
+   text-transform: capitalize;
+}
+
+.container{
+   padding: 100px 200px;
+   position: relative;
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   grid-template-rows: repeat(2,1fr);
+}
+
+.container::after{
+   content: "";
+   position: absolute;
+   width: 2px;
+   height: 1266px;
+   background-color: rgb(92, 92, 92);
+   top: 100px;
+   left: 50%;
+}
+
+.items{
+   display: flex;
+   justify-content: center;
+   padding: 20px 0;
+   /* border-bottom: 1px solid rgb(92, 92, 92); */
+   box-shadow: 0  0 20px 1px rgba(126, 124, 124, 0.562);
+   transition: all 0.25s linear;
+}
+
+.items:hover{
+   background-color: #000;
+   
+}
+
+.items:hover .desc li a{
+   color: #fff;
+}
+
+.items .avt{
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* border: 1px solid #000; */
+   overflow: hidden;
+}
+
+.items .avt img{
+   width: 100%;
+}
+
+.items .avt i{
+   font-size: 100px;
+   color: #c09440;
+}
+
+.items .desc{
+   padding: 10px 20px;
+}
+
+.items .desc .name{
+   text-transform: uppercase;
+   font-size: 25px;
+   padding-bottom: 10px;
+   color: #c09440;
+}
+
+.items .desc p{
+   display: inline-block;
+}
+
+.items .desc i{
+   min-width: 20px;
+   font-size: 15px;
+}
+
+.items .desc ul{
+   padding-bottom: 15px;
+}
+
+.items .desc li{
+   padding-bottom: 10px;
+}
+
+.items .desc li a{
+   color: #000;
+}
+
+.items .desc li a:hover p{
+   text-decoration: underline;
+}
+
+.empty{
+   padding: 0 20px;
+   display: flex;
+   /* justify-content: center; */
+   align-items: center;
+   font-size: 20px;
+   line-height: 25px;
+   color: #c09440;
+}
