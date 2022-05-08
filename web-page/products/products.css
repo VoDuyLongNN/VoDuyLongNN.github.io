@@ -160,6 +160,7 @@
 .menu-card .bottom .title{
    padding-bottom: 30px;
    color: #000;
+   font-size: 18px;
 }
 
 .menu-card .bottom .detail{
@@ -391,6 +392,9 @@ button.collapse.open{
 .container-list{
 
 }
+.container-list{
+   padding-bottom: 30px;
+}
 
 .container-list .type{
    padding: 50px 150px;
@@ -420,7 +424,7 @@ button.collapse.open{
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   max-height: 400px;
+   min-height: 400px;
    box-shadow: var(--box-shadow);
    border-radius: 20px;
    background-color: #fff;
@@ -493,7 +497,7 @@ button.collapse.open{
    color: #fff;
 }
 
-.list-laptop-office  .all-laptop{
+.all-laptop{
    display: flex;
    justify-content: center;
    align-items: center;
