@@ -1,4 +1,7 @@
-
+<?php
+   include_once '../../php/config.php';
+   session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -15,7 +18,12 @@
    <!-- Start Header -->
    <header>
       <div class="login js-login">
-         <div class="login-icon"><i class="fa-solid fa-user"></i> <p>Đăng Nhập</p></div>
+         <div class="login-icon"><i class="fa-solid fa-user"></i> <p><?php
+               if(isset($_SESSION['nameUser']))
+                  echo $_SESSION['nameUser'];
+               else
+                  echo 'đăng nhập';
+            ?></p></div>
       </div>
 
       <nav>
@@ -108,7 +116,7 @@
             <i class="fa-solid fa-magnifying-glass"></i></a>
          </div>
          <div class="right-header-icon js-right-header-card" title="Giỏi Hàng">
-            <i class="fa-solid fa-cart-shopping"></i>
+         <a href="../CartShopping/CartShopping.php" style = "color: #fff;"><i class="fa-solid fa-cart-shopping"></i></a>
          </div>
       </div>
    </header>
@@ -256,58 +264,9 @@
    <!-- End Footer -->
 
    <!-- Start Model -->
-   <div class="model js-model">
-      <div class="model-container">
-
-         <div class="model-logo">
-            <p class="logo-text">
-               hardware technology library
-            </p>
-            <img src="../../asset/picture/logo/logo-black-boder.svg" alt="">
-         </div>
-
-         <div class="form-login">
-            <div class="close-form js-close-form">
-               <i class="fa-solid fa-xmark"></i>
-            </div>
-            <h2 class="signup-title">Đăng Nhập</h2>
-            <button class="signup-by-accout signup-google">
-               <i class="fa-brands fa-google"></i>
-               <span class="signup-text signup-text-google">Đăng nhập bằng Google</span>
-            </button>
-            <button class="signup-by-accout signup-facebook">
-               <i class="fa-brands fa-facebook-f"></i>
-               <span class="signup-text signup-text-facebook">Đăng nhập bằng Facebook</span>
-            </button>
-            <div class="signup-or">
-               <span>Or</span>
-            </div>
-
-            <div class="card-form">
-               <form action="../../php/login.php" method="post">
-                  <div class="card-items">
-                     <input type="text" required>
-                     <label for="">Email</label>
-                     <i class="fas fa-user-tie"></i>
-                  </div>
-                  <div class="card-items">
-                     <input type="password" required>
-                     <label for="">Mật khẩu</label>
-                     <i class="fas fa-lock"></i>
-                  </div>
-                  <div class="card-items submit">
-                     <input type="submit" value="Đăng Nhập">
-                  </div>
-               </form>
-            </div>
-
-            <div class="signup-already">
-               <p>Bạn chưa có tài khoảng?</p>
-               <a href="" class="signup-already-link">Tạo tài khoảng</a>
-            </div>
-         </div>
-      </div>
-   </div>
+   <?php
+      include_once '../../php/model.php';
+   ?>
    <!-- End Model -->
 
    <!-- Start Search -->

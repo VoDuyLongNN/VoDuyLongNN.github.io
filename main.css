@@ -54,6 +54,7 @@ header{
    background-color: var(--main-color);
    text-transform: uppercase;
    z-index: 99;
+   
 }
 
 header ul a{
@@ -490,9 +491,7 @@ footer ul a{
    z-index: 2;
 }
 
-.card-form{
 
-}
 
 .card-form .card-items{
    position: relative;

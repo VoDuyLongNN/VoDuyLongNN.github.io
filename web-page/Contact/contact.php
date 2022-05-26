@@ -1,3 +1,8 @@
+<?php
+   include_once '../../php/config.php';
+   session_start();
+?>
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -20,7 +25,12 @@
       <!-- Start Header -->
       <header>
          <div class="login js-login">
-            <div class="login-icon"><i class="fa-solid fa-user"></i> <p>Đăng Nhập</p></div>
+            <div class="login-icon"><i class="fa-solid fa-user"></i> <p><?php
+               if(isset($_SESSION['nameUser']))
+                  echo $_SESSION['nameUser'];
+               else
+                  echo 'đăng nhập';
+            ?></p></div>
          </div>
          <nav>
             <ul class="menu">
@@ -111,7 +121,7 @@
                <i class="fa-solid fa-magnifying-glass"></i></a>
             </div>
             <div class="right-header-icon js-right-header-card" title="Giỏi Hàng">
-               <i class="fa-solid fa-cart-shopping"></i>
+            <a href="../CartShopping/CartShopping.php" style = "color: #fff;"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
          </div>
       </header>

@@ -41,7 +41,7 @@ CREATE TABLE `giohang` (
 --
 
 CREATE TABLE `khachhang` (
-  `MaKH` varchar(30) NOT NULL,
+  `MaKH` varchar(30) NOT NULL AUTO_INCREMENT,
   `FirstName` varchar(10) NOT NULL,
   `LastName` varchar(30) NOT NULL,
   `Gender` varchar(6) NOT NULL,

@@ -31,20 +31,8 @@ function hideFormSearch(){
 searchIcon.addEventListener('click', showFormSearch);
 closeSearchForm.addEventListener('click', hideFormSearch);
 
-
-// javaScript card shopping form
-const cardIcon = document.querySelector('.js-right-header-card');
-const shoppingForm = document.querySelector('.js-shopping-form');
-const closeShoppingForm = document.querySelector('.js-close-shopping-form');
-
-function showFormShopping(){
-   shoppingForm.classList.add('open');
-}
-
-function hideFormShopping(){
-   shoppingForm.classList.remove('open');
-}
-
-cardIcon.addEventListener('click', showFormShopping);
-closeShoppingForm.addEventListener('click', hideFormShopping)
+const btnOrder = document.querySelector('.js-order')
+btnOrder.addEventListener('click', function(){
+   alert("Đặt hàng thành công");
+})
 

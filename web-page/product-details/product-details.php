@@ -1,5 +1,6 @@
 <?php
    include_once '../../php/config.php';
+   session_start();
    $id = $_GET['id'];
    $sql = "SELECT * FROM sanpham WHERE maSP = '$id'";
    $query_sql=mysqli_query($conn,$sql);
@@ -44,7 +45,12 @@
    <!-- Start Header -->
    <header>
       <div class="login js-login">
-         <div class="login-icon"><i class="fa-solid fa-user"></i> <p>Đăng Nhập</p></div>
+         <div class="login-icon"><i class="fa-solid fa-user"></i> <p><?php
+               if(isset($_SESSION['nameUser']))
+                  echo $_SESSION['nameUser'];
+               else
+                  echo 'đăng nhập';
+            ?></p></div>
       </div>
 
       <nav>
@@ -137,7 +143,7 @@
             <i class="fa-solid fa-magnifying-glass"></i></a>
          </div>
          <div class="right-header-icon js-right-header-card" title="Giỏi Hàng">
-            <i class="fa-solid fa-cart-shopping"></i>
+         <a href="../CartShopping/CartShopping.php" style = "color: #fff;"><i class="fa-solid fa-cart-shopping"></i></a>
          </div>
       </div>
    </header>
@@ -159,22 +165,7 @@
          </div>
          <div class="product-description">
             <p class="description-text">Mô tả sản phẩm</p>
-            <span>
-               <p>Màn hình: </p>
-               <p>OLED6.7"Super Retina XDR</p>
-            </span>
-            <span>
-               <p>Hệ điều hành: </p>
-               <p>IOS 15</p>
-            </span>
-            <span>
-               <p>Camera sau: </p>
-               <p>3 Camera 12Mp</p>
-            </span>
-            <span>
-               <p>Camera trước: </p>
-               <p>12MP</p>
-            </span>
+            <p class=""><?php echo $row_sql["MoTa"]; ?></p>
 
          </div>
          <div class="evuluate">
@@ -188,8 +179,14 @@
             </div>
          </div>
          <button class="btn-add-cart btn-shopping">
-            <i class="fa-solid fa-cart-arrow-down" style="padding-right: 20px;"></i>
-            Thêm vào giỏ hàng
+            <?php
+               echo '
+                  <a href="../../php/addProductToCart.php?idAdd='.$id.'" style = "color: #fff;">
+                     <i class="fa-solid fa-cart-arrow-down" style="padding-right: 20px;"></i>
+                     Thêm vào giỏ hàng
+                  </a>
+               ';
+            ?>
          </button>
          <button class="btn-buy-now btn-shopping">mua ngay</button>
       </div>
@@ -411,64 +408,10 @@
    </footer>
    <!-- End Footer -->
 
-      <!-- Start Model -->
-   <div class="model js-model">
-      <div class="model-container">
-
-         <div class="model-logo">
-            <p class="logo-text">
-               hardware technology library
-            </p>
-            <img src="../../asset/picture/logo/logo-black-boder.svg" alt="">
-         </div>
-
-         <div class="form-login">
-            <div class="close-form js-close-form">
-               <i class="fa-solid fa-xmark"></i>
-            </div>
-            <h2 class="signup-title">Đăng Nhập</h2>
-            <button class="signup-by-accout signup-google">
-               <i class="fa-brands fa-google"></i>
-               <span class="signup-text signup-text-google">Đăng nhập bằng Google</span>
-            </button>
-            <button class="signup-by-accout signup-facebook">
-               <i class="fa-brands fa-facebook-f"></i>
-               <span class="signup-text signup-text-facebook">Đăng nhập bằng Facebook</span>
-            </button>
-            <div class="signup-or">
-               <span>Or</span>
-            </div>
-
-            <div class="card-form">
-               <form action="">
-                  <div class="card-items">
-                     <input type="text" required>
-                     <label for="">Tài khoản</label>
-                     <i class="fas fa-user-tie"></i>
-                  </div>
-                  <!-- <div class="card-items">
-                     <input type="email" required>
-                     <label for="">Email</label>
-                     <i class="fas fa-envelope"></i>
-                  </div> -->
-                  <div class="card-items">
-                     <input type="password" required>
-                     <label for="">Mật khẩu</label>
-                     <i class="fas fa-lock"></i>
-                  </div>
-                  <div class="card-items submit">
-                     <input type="submit" value="Đăng Nhập">
-                  </div>
-               </form>
-            </div>
-
-            <div class="signup-already">
-               <p>Bạn chưa có tài khoảng?</p>
-               <a href="../Form-Signup/Signup.php" class="signup-already-link">Tạo tài khoảng</a>
-            </div>
-         </div>
-      </div>
-   </div>
+   <!-- Start Model -->
+   <?php
+      include_once '../../php/model.php';
+   ?>
    <!-- End Model -->
 
    <!-- Start Search -->
@@ -486,13 +429,30 @@
    <!-- End Search -->
 
    <!-- Start Cart Shopping -->
-   <div class="shopping-form js-shopping-form">
+   <div class="shopping-form js-shopping-form" style = "width: 200px; padding: 30px 30px">
       <div class="close-shopping-form js-close-shopping-form">
          <i class="fa-solid fa-xmark"></i>
       </div>
       <h2 class="shopping-form-text">
          Giỏ hàng
       </h2>
+
+      <div class = "main-content" style = "display: flex; justify-content: center; align-items: center; padding-top: 30px;">
+         <?php
+            if($add == 'true'){
+               echo '
+                  <div style = "width: 50%;"><img src="../../asset/picture/product/'.$loaisp.'/'.$row_sql["Anh"].' ?>" alt="" style = "width: 200px; height: auto;"></div>
+                  <div class = "right" style = "width: 50%; height: 100%;">
+                     <p>'.$row_sql["TenSP"].'</p>
+                     <p>'.$row_sql["Gia"].'</p>
+
+                  </div>
+               ';
+            }
+
+         ?>
+      </div>
+
    </div>
    <!-- End Cart Shopping -->
 

@@ -25,26 +25,26 @@
          </div>
 
          <div class="card-form">
-            <form action="">
-               <div class="card-items">
-                  <input type="text" required>
-                  <label for="">Tài khoản</label>
-                  <i class="fas fa-user-tie"></i>
-               </div>
-               <!-- <div class="card-items">
-                  <input type="email" required>
-                  <label for="">Email</label>
-                  <i class="fas fa-envelope"></i>
-               </div> -->
-               <div class="card-items">
-                  <input type="password" required>
-                  <label for="">Mật khẩu</label>
-                  <i class="fas fa-lock"></i>
-               </div>
-               <div class="card-items submit">
-                  <input type="submit" value="Đăng Nhập">
-               </div>
-            </form>
+         <form action="../../php/login.php" method="post">
+                  <div class="card-items">
+                     <input type="email" name="email" id="email" required>
+                     <label for="">Tài khoản</label>
+                     <i class="fas fa-user-tie"></i>
+                  </div>
+                  <!-- <div class="card-items">
+                     <input type="email" required>
+                     <label for="">Email</label>
+                     <i class="fas fa-envelope"></i>
+                  </div> -->
+                  <div class="card-items">
+                     <input type="password" name="pass" id="pass" required>
+                     <label for="">Mật khẩu</label>
+                     <i class="fas fa-lock"></i>
+                  </div>
+                  <div class="card-items submit">
+                     <input type="submit" value="Đăng Nhập">
+                  </div>
+               </form>
          </div>
 
          <div class="signup-already">

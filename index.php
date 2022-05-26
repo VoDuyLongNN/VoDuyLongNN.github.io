@@ -1,5 +1,6 @@
 <?php
    include_once './php/config.php';
+   session_start();
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +24,14 @@
    <!-- Start Header -->
    <header>
       <div class="login js-login">
-         <div class="login-icon"><i class="fa-solid fa-user"></i> <p>Đăng Nhập</p></div>
+         <div class="login-icon"><i class="fa-solid fa-user"></i> <p>
+            <?php
+               if(isset($_SESSION['nameUser']))
+                  echo $_SESSION['nameUser'];
+               else
+                  echo 'đăng nhập';
+            ?>
+         </p></div>
       </div>
 
       <nav>
@@ -112,11 +120,13 @@
             <i class="fa-solid fa-magnifying-glass"></i>
          </div>
          <div class="right-header-icon js-right-header-card" title="Giỏ Hàng">
-            <i class="fa-solid fa-cart-shopping"></i>
+            <a href="./web-page/CartShopping/CartShopping.php" style = "color: #fff;"><i class="fa-solid fa-cart-shopping"></i></a>
          </div>
       </div>
    </header>
    <!-- End Header -->
+
+  
 
    <!-- Start Banner -->
    <section class="banner" id="header">
@@ -421,9 +431,9 @@
             </div>
 
             <div class="card-form">
-               <form action="">
+               <form action="./php/login.php" method="post">
                   <div class="card-items">
-                     <input type="text" required>
+                     <input type="email" name="email" id="email" required>
                      <label for="">Tài khoản</label>
                      <i class="fas fa-user-tie"></i>
                   </div>
@@ -433,7 +443,7 @@
                      <i class="fas fa-envelope"></i>
                   </div> -->
                   <div class="card-items">
-                     <input type="password" required>
+                     <input type="password" name="pass" id="pass" required>
                      <label for="">Mật khẩu</label>
                      <i class="fas fa-lock"></i>
                   </div>
