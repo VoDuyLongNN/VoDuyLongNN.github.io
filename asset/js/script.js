@@ -31,8 +31,5 @@ function hideFormSearch(){
 searchIcon.addEventListener('click', showFormSearch);
 closeSearchForm.addEventListener('click', hideFormSearch);
 
-const btnOrder = document.querySelector('.js-order')
-btnOrder.addEventListener('click', function(){
-   alert("Đặt hàng thành công");
-})
+
 

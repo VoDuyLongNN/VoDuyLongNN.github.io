@@ -362,29 +362,8 @@
       <!-- End Model -->
 
       <!-- Start Search -->
-      <div class="search js-search">
-         <div class="search-container">
-            <div class="close-search js-close-search">
-               <i class="fa-solid fa-xmark"></i>
-            </div>
-            <input type="search" name="" id="" class="input-search" placeholder="Bạn muốn tìm kiếm gì?">
-            <div class="search-icon-form js-search-icon">
-               <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-         </div>
-      </div>
+      <?php include_once '../../php/formSearch.php'; ?>
       <!-- End Search -->
-
-      <!-- Start Cart Shopping -->
-      <div class="shopping-form js-shopping-form">
-         <div class="close-shopping-form js-close-shopping-form">
-            <i class="fa-solid fa-xmark"></i>
-         </div>
-         <h2 class="shopping-form-text">
-            Giỏ hàng
-         </h2>
-      </div>
-      <!-- End Cart Shopping -->
 
       <!--Script -->
       <script src="../../asset/js/script.js"></script>

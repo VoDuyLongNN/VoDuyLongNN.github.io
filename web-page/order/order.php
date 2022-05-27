@@ -1,39 +1,6 @@
-
 <?php
    include_once '../../php/config.php';
    session_start();
-
-   if(isset($_GET['loai'])){
-      $id = $_GET['loai'];
-      $maloai = $_GET['maloai'];
-      $sql = "SELECT * FROM sanpham WHERE LoaiSP = '$id' AND 
-      MaLoai LIKE '$maloai' OR '$maloai' LIKE ''";
-      $query_sql=mysqli_query($conn,$sql);
-      $row_sql=mysqli_fetch_assoc($query_sql);
-      if($row_sql["LoaiSP"] == 'DT')
-         $loaisp = 'phone';
-      elseif($row_sql["LoaiSP"] == 'MH')
-         $loaisp = 'Screen';
-      elseif($row_sql["LoaiSP"] == 'Tai Nghe')
-         $loaisp = 'headphone';
-      elseif($row_sql["LoaiSP"] == 'LT')
-      {
-         if($row_sql["MaLoai"] == 'Gaming')
-            $loaisp = 'laptop/gaming';
-         elseif($row_sql["MaLoai"] == 'Asus')
-            $loaisp = 'laptop/asus';
-         elseif($row_sql["MaLoai"] == 'Dell')
-            $loaisp = 'laptop/dell';
-         elseif($row_sql["MaLoai"] == 'Macbook')
-            $loaisp = 'laptop/macbook';
-      }
-      elseif($row_sql["LoaiSP"] == 'Chuot')
-         $loaisp = 'mouse';
-      elseif($row_sql["LoaiSP"] == 'Ban Phim')
-         $loaisp = 'keyboard';
-   }
-   else
-      $id = "";
 ?>
 
 <!DOCTYPE html>
@@ -45,11 +12,51 @@
    <link rel="stylesheet" href="../../asset/font/fontawesome-free-6.0.0-web/css/all.min.css">
    <link rel="icon" href="../../asset/picture/logo/logoh3.svg" type="image/x-icon" sizes="32*32">
    <link rel="stylesheet" href="../../main.css">
-   <link rel="stylesheet" href="../products/products.css">
-   <title>Tất cả sản phảm</title>
+   <title>Đặt Hàng</title>
    <style>
-      .product-container{
-         min-height: 357px;
+      body{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+      }
+      .title{
+         text-align: center;
+         font-size: 30px;
+         text-transform: capitalize;
+         font-weight: bold;
+         padding: 20px;
+      }
+      form{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+      }
+
+      .item{
+         padding: 20px 0;
+         min-width: 400px;
+         display: flex;
+         justify-content: space-between;
+      }
+
+      .item label{
+         font-size: 20px;
+      }
+
+      .item input, textarea{
+         width: 200px;
+         padding: 5px;
+      }
+
+      .submit{
+         margin: 20px;
+         background-color: #000;
+         color: #fff;
+         padding: 10px 20px;
+         border: 2px solid #fff;
+         cursor: pointer;
       }
    </style>
 </head>
@@ -159,76 +166,34 @@
          </div>
       </div>
    </header>
-
-   <?php 
-      if($id != "")
-      {
-         echo '<h1 style = "text-align: center; padding: 40px 0px; text-transform: capitalize;">
-         Tất Cả ';
-         if($row_sql['LoaiSP'] == 'Tai Nghe')
-            echo 'Tai Nghe';
-         elseif($row_sql['LoaiSP'] == 'DT')
-            echo 'Điện Thoại';
-         elseif($row_sql['LoaiSP'] == 'LT')
-            echo 'Laptop';
-         elseif($row_sql['LoaiSP'] == 'MH')
-            echo 'Màn Hình';
-         elseif($row_sql['LoaiSP'] == 'Chuot')
-            echo 'Chuột';
-         elseif($row_sql['LoaiSP'] == 'Ban Phim')
-            echo 'Bàn Phím';
-         echo '</h1>';
-      }
-      
-   ?>
-
-   <div class="product-container">
-      <div class="menu-items">
-         <?php
-            if($id != ""){
-               $sql = "SELECT * FROM sanpham WHERE LoaiSP = '$id' AND MaLoai LIKE '$maloai' OR '$maloai' LIKE ''";
-               $stmt = mysqli_stmt_init($conn);
-               if(!mysqli_stmt_prepare($stmt,$sql)){
-                  echo 'Errol';
-               } else{
-                  mysqli_stmt_execute($stmt);
-                  $result = mysqli_stmt_get_result($stmt);
-
-                  while($row = mysqli_fetch_assoc($result)){
-                     echo '
-                     <a href="../product-details/product-details.php?id='.$row["maSP"].'">
-                        <div class="menu-card">
-                           <div class="imga">
-                              <img src="../../asset/picture/product/'.$loaisp.'/'.$row["Anh"].'" alt="">
-                           </div>
-                           <div class="bottom">
-                              <h3 class="title">'.$row["TenSP"].'</h3>
-                              <p class="detail">'.$row["MoTa"].'</p>
-                              <p class="coins" style = "color:red;">'.number_format($row["Gia"],0, ',', '.').' VND</p>
-                           </div>
-                        </div>
-                     </a>
-                     ';
-                  }
-               }
-            }
-         ?>
+   <p class="title">Nhập Thông Tin Của Bạn</p>
+   <form action="">
+      <div class="item">
+         <label for="">Họ tên: </label>
+         <input type="text" name="" id="" required>
       </div>
-      <?php
-         if($id == "")
-         echo '
-         <center style = "font-size: 30px;
-         padding: 30px">Không tìm thấy thông tin nào trùng khớp với "'.$_GET['search'].'" </br></br> Nói thiệt ra là hông biết làm 😢</center>
-         ';
-      ?>
-   </div>
-
+      <div class="item">
+         <label for="">Số Điện Thoại: </label>
+         <input type="text" name="" id="" required>
+      </div>
+      <div class="item">
+         <label for="">Địa chỉ: </label>
+         <textarea name="" id="" cols="30" rows="10" required></textarea>
+      </div>
+      <input type="submit" value="Đặt hàng" class = "submit">
+   </form>
    <?php
-      include_once '../../php/footer.php';
+      include_once('../../php/footer.php');
+      include_once('../../php/formSearch.php');
       include_once '../../php/formSearch.php';
-      include_once '../../php/model.php';
-      include_once '../../php/cartShopping.php';
    ?>
+   
    <script src="../../asset/js/script.js"></script>
+   <script>
+      const btnOrder = document.querySelector('.submit')
+      btnOrder.addEventListener('click', function(){
+         alert("Đặt hàng thành công");
+      })
+   </script>
 </body>
 </html>

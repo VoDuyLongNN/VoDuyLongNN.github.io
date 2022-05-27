@@ -164,7 +164,7 @@
                            <div class="bottom">
                               <p class="title" style="color: #000;">'.$row["TenSP"].'</p>
                               <p class="details" style="color: #EDE6DB;padding-bottom: 30px">'.$row["MoTa"].'</p>
-                              <p class="price" style="color: #EB5353;">'.$row["Gia"].' đ</p>
+                              <p class="price" style="color: #EB5353;">'.number_format($row["Gia"],0, ',', '.').' VND</p>
                            </div>
                         </div>
                      </a>
@@ -201,7 +201,7 @@
                            <div class="bottom">
                               <h3 class="title" style = "font-size: 20px; color: #000">'.$row["TenSP"].'</h3>
                               <p class="detail">'.$row["MoTa"].'</p>
-                              <p class="coins">'.$row["Gia"].' đ</p>
+                              <p class="coins">'.number_format($row["Gia"],0, ',', '.').' VND</p>
                            </div>
                         </div>
                      </a>
@@ -240,7 +240,7 @@
                            <div class="bottom">
                               <p class="title" style="color: #000;">'.$row["TenSP"].'</p>
                               <p class="details" style="color: #EDE6DB;padding-bottom: 30px">'.$row["MoTa"].'</p>
-                              <p class="price" style="color: #EB5353;">'.$row["Gia"].' đ</p>
+                              <p class="price" style="color: #EB5353;">'.number_format($row["Gia"],0, ',', '.').' VND</p>
                            </div>
                         </div>
                      </a>
@@ -277,7 +277,7 @@
                            <div class="bottom">
                               <h3 class="title" style = "font-size: 20px; color: #000">'.$row["TenSP"].'</h3>
                               <p class="detail">'.$row["MoTa"].'</p>
-                              <p class="coins">'.$row["Gia"].' đ</p>
+                              <p class="coins">'.number_format($row["Gia"],0, ',', '.').' VND</p>
                            </div>
                         </div>
                      </a>
@@ -464,9 +464,30 @@
    <!-- End Model -->
 
    <!-- Start Search -->
-   <?php
-      include_once('./php/formSearch.php');
-   ?>
+   <div class="search js-search">
+   <div class="search-container">
+      <div class="close-search js-close-search">
+         <i class="fa-solid fa-xmark"></i>
+      </div>
+      <form action="./web-page/all-product/all-product.php" method="GET"
+      style = "display: flex;">
+         <input type="search" name="search" id="" class="input-search" placeholder="Bạn muốn tìm kiếm gì?">
+         <div class="search-icon-form js-search-icon"
+         style = "font-size: 20px;
+                  margin-left: 0;
+                  cursor: pointer;
+                  padding: 0 10px;
+                  display: flex;">    
+            <input type="submit" value="Tìm" style = "font-size: 20px;
+                  cursor: pointer;
+                  padding: 0 10px;
+                  display: flex;
+                  background-color: #000;
+                  color: #fff;">
+         </div>
+      </form>
+   </div>
+   </div>
    <!-- End Search -->
 
    <!-- Start Cart Shopping -->

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 08, 2022 lúc 07:06 AM
+-- Thời gian đã tạo: Th5 27, 2022 lúc 04:29 AM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 8.1.2
 
@@ -28,11 +28,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `giohang` (
-  `MaDH` varchar(30) NOT NULL,
-  `MaKH` varchar(30) NOT NULL,
-  `MaPS` varchar(30) NOT NULL,
-  `Ten` int(11) NOT NULL
+  `IdKhachHang` int(30) NOT NULL,
+  `IdSanPham` varchar(10) NOT NULL,
+  `ngaydathang` datetime NOT NULL,
+  `diachidathang` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `giohang`
+--
+
+INSERT INTO `giohang` (`IdKhachHang`, `IdSanPham`, `ngaydathang`, `diachidathang`) VALUES
+(1, 'C21', '0000-00-00 00:00:00', ''),
+(19, 'BP15', '0000-00-00 00:00:00', ''),
+(1, 'OPBac', '0000-00-00 00:00:00', ''),
+(1, 'C2', '0000-00-00 00:00:00', '');
 
 -- --------------------------------------------------------
 
@@ -41,8 +51,8 @@ CREATE TABLE `giohang` (
 --
 
 CREATE TABLE `khachhang` (
-  `MaKH` varchar(30) NOT NULL AUTO_INCREMENT,
-  `FirstName` varchar(10) NOT NULL,
+  `MaKH` int(30) NOT NULL,
+  `FirstName` varchar(100) NOT NULL,
   `LastName` varchar(30) NOT NULL,
   `Gender` varchar(6) NOT NULL,
   `Born` date NOT NULL,
@@ -57,7 +67,9 @@ CREATE TABLE `khachhang` (
 --
 
 INSERT INTO `khachhang` (`MaKH`, `FirstName`, `LastName`, `Gender`, `Born`, `Address`, `Email`, `EmailPass`, `PassSignup`) VALUES
-('', 'Võ Duy', 'Long', 'man', '2002-02-17', 'binhDinhquyNhonnguyenVanCu', 'voduylong1106@gmail.com', 'vdl17022002', 'vdl');
+(1, 'Võ Duy', 'Long', 'man', '2002-02-17', 'binhDinhquyNhonnguyenVanCu', 'voduylong1106@gmail.com', 'vdl17022002', 'vdl'),
+(18, 'Võ Thị Nguyệt', 'Nga', 'woman', '2002-11-06', 'binhDinhquyNhonnguyenVanCu', 'ngavovo2002@gmail.com', 'vtnn2002', 'vtnn2002'),
+(19, 'Nguyễn Văn', 'Hòa', 'man', '2022-05-12', 'binhDinhquyNhonnguyenVanCu', 'nguyenvanhoa@gmail.com', 'vh123', 'vh123');
 
 -- --------------------------------------------------------
 
@@ -246,7 +258,8 @@ INSERT INTO `sanpham` (`maSP`, `LoaiSP`, `MaLoai`, `TenSP`, `MoTa`, `Gia`, `Anh`
 -- Chỉ mục cho bảng `giohang`
 --
 ALTER TABLE `giohang`
-  ADD PRIMARY KEY (`MaDH`);
+  ADD KEY `IdKhachHang` (`IdKhachHang`),
+  ADD KEY `IdSanPham` (`IdSanPham`);
 
 --
 -- Chỉ mục cho bảng `khachhang`
@@ -259,6 +272,27 @@ ALTER TABLE `khachhang`
 --
 ALTER TABLE `sanpham`
   ADD PRIMARY KEY (`maSP`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `khachhang`
+--
+ALTER TABLE `khachhang`
+  MODIFY `MaKH` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- Các ràng buộc cho các bảng đã đổ
+--
+
+--
+-- Các ràng buộc cho bảng `giohang`
+--
+ALTER TABLE `giohang`
+  ADD CONSTRAINT `giohang_ibfk_1` FOREIGN KEY (`IdSanPham`) REFERENCES `sanpham` (`maSP`),
+  ADD CONSTRAINT `giohang_ibfk_2` FOREIGN KEY (`IdKhachHang`) REFERENCES `khachhang` (`MaKH`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

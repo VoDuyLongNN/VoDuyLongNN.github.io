@@ -211,7 +211,7 @@
                            <div class="bottom">
                               <h3 class="title">'.$row["TenSP"].'</h3>
                               <p class="detail">'.$row["MoTa"].'</p>
-                              <p class="coins">'.$row["Gia"].' đ</p>
+                              <p class="coins" style = "color: red;">'.number_format($row["Gia"],0, ',', '.').' VND</p>
                            </div>
                         </div>
                      </a>
@@ -244,7 +244,7 @@
                            <div class="bottom">
                               <h3 class="title">'.$row["TenSP"].'</h3>
                               <p class="detail">'.$row["MoTa"].'</p>
-                              <p class="coins">'.$row["Gia"].' đ</p>
+                              <p class="coins" style = "color: red;">'.number_format($row["Gia"],0, ',', '.').' VND</p>
                            </div>
                         </div>
                      </a>
@@ -314,7 +314,7 @@
                         <div class="bottom">
                            <h3 class="title" style="color: #000;">'.$row["TenSP"].'</h3>
                            <p class="detail" style="color: #EDE6DB;padding-bottom: 30px">'.$row["MoTa"].'</p>
-                           <p class="coins" style="color: #EB5353;">'.$row["Gia"].'</p>
+                           <p class="coins" style="color: #EB5353;">'.number_format($row["Gia"],0, ',', '.').' VND</p>
                         </div>
                      </div>
                   </a>
@@ -327,33 +327,70 @@
          
       </div>
 
-         <!-- start laptop list product -->
-         <!-- laptop gaming -->
-         <div class="list-laptop-product" id="laptop-gaming" style = "height: 3136px;">
-            <div class="container-list laptop-gaming">
-               <h1 class="type">Laptop Gaming</h1>
-               <div class="banner">
-                  <a href="">
-                     <img src="../../asset/picture/product/banner-brand/banner-laptop-gaming.jpg" alt="">
-                  </a>
-               </div>
+      <!-- start laptop list product -->
+      <!-- laptop gaming -->
+      <div class="list-laptop-product" id="laptop-gaming" style = "height: 3136px;">
+         <div class="container-list laptop-gaming">
+            <h1 class="type">Laptop Gaming</h1>
+            <div class="banner">
+               <a href="">
+                  <img src="../../asset/picture/product/banner-brand/banner-laptop-gaming.jpg" alt="">
+               </a>
+            </div>
 
-               <div class="bottom-container">
+            <div class="bottom-container">
 
-                  <?php
+               <?php
 
-                  $sql = "SELECT * FROM sanpham WHERE LoaiSP = 'LT' AND MaLoai = 'Gaming'";
-                  $stmt = mysqli_stmt_init($conn);
-                  if(!mysqli_stmt_prepare($stmt,$sql)){
-                     echo 'Errol';
-                  } else{
-                     mysqli_stmt_execute($stmt);
-                     $result = mysqli_stmt_get_result($stmt);
-                     $i = 0;
+               $sql = "SELECT * FROM sanpham WHERE LoaiSP = 'LT' AND MaLoai = 'Gaming'";
+               $stmt = mysqli_stmt_init($conn);
+               if(!mysqli_stmt_prepare($stmt,$sql)){
+                  echo 'Errol';
+               } else{
+                  mysqli_stmt_execute($stmt);
+                  $result = mysqli_stmt_get_result($stmt);
+                  $i = 0;
 
-                     while($row = mysqli_fetch_assoc($result)){
+                  while($row = mysqli_fetch_assoc($result)){
+                     echo '
+                     <a href="../product-details/product-details.php?id='.$row["maSP"].'">
+                        <div class="menu-card">
+                        <div class="imga">
+                           <img src="../../asset/picture/product/laptop/gaming/'.$row["Anh"].'" alt="">
+                        </div>
+                        <div class="bottom">
+                           <h3 class="title">'.$row["TenSP"].'</h3>
+                           <p class="detail">'.$row["MoTa"].'</p>
+                           <p class="coins" style = "color: red;">'.number_format($row["Gia"],0, ',', '.').' VND</p>
+                        </div>
+                        </div>
+                     </a>
+                     ';
+                     $i++;
+                     if($i  == 15)
+                        break;
+                  }
+               }
+               ?>
+            
+         </div>
+         <div class="bottom-container bottom-container-loadmore js-container-loadmore">
+         <?php
+               $sql = "SELECT * FROM sanpham WHERE LoaiSP = 'LT' AND MaLoai = 'Gaming'";
+               $stmt = mysqli_stmt_init($conn);
+               if(!mysqli_stmt_prepare($stmt,$sql)){
+                  echo 'Errol';
+               } else{
+                  mysqli_stmt_execute($stmt);
+                  $result = mysqli_stmt_get_result($stmt);
+                  $i = 0;
+
+                  while($row = mysqli_fetch_assoc($result)){
+                     $i++;
+                     if($i >= 15)
+                     {
                         echo '
-                        <a href="../product-details/product-details.php?id='.$row["maSP"].'">
+                        <a href="../product-details/product-details.html">
                            <div class="menu-card">
                            <div class="imga">
                               <img src="../../asset/picture/product/laptop/gaming/'.$row["Anh"].'" alt="">
@@ -361,128 +398,136 @@
                            <div class="bottom">
                               <h3 class="title">'.$row["TenSP"].'</h3>
                               <p class="detail">'.$row["MoTa"].'</p>
-                              <p class="coins">'.$row["Gia"].'</p>
+                              <p class="coins" style = "color: red;">'.number_format($row["Gia"],0, ',', '.').' VND</p>
                            </div>
                            </div>
                         </a>
                         ';
-                        $i++;
-                        if($i  == 15)
-                           break;
                      }
                   }
-                  ?>
-               
-            </div>
-            <div class="bottom-container bottom-container-loadmore js-container-loadmore">
-            <?php
-
-                  $sql = "SELECT * FROM sanpham WHERE LoaiSP = 'LT' AND MaLoai = 'Gaming'";
-                  $stmt = mysqli_stmt_init($conn);
-                  if(!mysqli_stmt_prepare($stmt,$sql)){
-                     echo 'Errol';
-                  } else{
-                     mysqli_stmt_execute($stmt);
-                     $result = mysqli_stmt_get_result($stmt);
-                     $i = 0;
-
-                     while($row = mysqli_fetch_assoc($result)){
-                        $i++;
-                        if($i >= 15)
-                        {
-                           echo '
-                           <a href="../product-details/product-details.html">
-                              <div class="menu-card">
-                              <div class="imga">
-                                 <img src="../../asset/picture/product/laptop/gaming/'.$row["Anh"].'" alt="">
-                              </div>
-                              <div class="bottom">
-                                 <h3 class="title">'.$row["TenSP"].'</h3>
-                                 <p class="detail">'.$row["MoTa"].'</p>
-                                 <p class="coins">'.$row["Gia"].'</p>
-                              </div>
-                              </div>
-                           </a>
-                           ';
-                        }
-                     }
-                  }
-                  ?>
-                  <div class="all-laptop" style = "text-alight: right;">
-                     <button>Xem tất cả
-                        <i class="fa-solid fa-angle-right" style="padding-left:10px;"></i>
-                     </button>
-                  </div>
+               }
+               ?>
+               <div class="all-laptop" style = "text-alight: right;">
+                  <button>Xem tất cả
+                     <i class="fa-solid fa-angle-right" style="padding-left:10px;"></i>
+                  </button>
                </div>
+            </div>
 
-               <a href="../all-product/all-product.php?loai=<?php echo $row['LoaiSP'];?>&maloai=<?php echo $row['MaLoai'];?>">
-               <button class="see-more see-more-laptop js-see-more-laptop">
-                  Xem thêm 10 Sản Phẩm
-                  <i class="fa-solid fa-angle-down"></i>
-               </button>
+            <a href="../all-product/all-product.php?loai=<?php echo $row['LoaiSP'];?>&maloai=<?php echo $row['MaLoai'];?>">
+            <button class="see-more see-more-laptop js-see-more-laptop">
+               Xem thêm 10 Sản Phẩm
+               <i class="fa-solid fa-angle-down"></i>
+            </button>
+            </a>
+      </div>
+
+      <!-- laptop macbook -->
+      <div class="list-laptop-product list-laptop-macbook" id="laptop-macbook">
+         <div class="container-list laptop-macbook">
+            <h1 class="type">Macbook</h1>
+            <div class="banner">
+               <a href="">
+                  <img src="../../asset/picture/product/banner-brand/banner-laptop-macbook.jpg" alt="">
                </a>
-         </div>
-
-         <!-- laptop macbook -->
-         <div class="list-laptop-product list-laptop-macbook" id="laptop-macbook">
-            <div class="container-list laptop-macbook">
-               <h1 class="type">Macbook</h1>
-               <div class="banner">
-                  <a href="">
-                     <img src="../../asset/picture/product/banner-brand/banner-laptop-macbook.jpg" alt="">
-                  </a>
-               </div>
-
-               <div class="bottom-container">
-                  <?php
-
-                  $sql = "SELECT * FROM sanpham WHERE LoaiSP = 'LT' AND maSP NOT LIKE 'Out_' AND MaLoai = 'Macbook'";
-                  $stmt = mysqli_stmt_init($conn);
-                  if(!mysqli_stmt_prepare($stmt,$sql)){
-                     echo 'Errol';
-                  } else{
-                     mysqli_stmt_execute($stmt);
-                     $result = mysqli_stmt_get_result($stmt);
-
-                     while($row = mysqli_fetch_assoc($result)){
-                        echo '
-                        <a href="../product-details/product-details.php?id='.$row["maSP"].'">
-                           <div class="menu-card">
-                              <div class="imga">
-                                 <img src="../../asset/picture/product/laptop/macbook/'.$row["Anh"].'" alt="">
-                              </div>
-                              <div class="bottom">
-                                 <h3 class="title">'.$row["TenSP"].'</h3>
-                                 <p class="detail">'.$row["MoTa"].'</p>
-                                 <p class="coins">'.$row["Gia"].' đ</p>
-                              </div>
-                           </div>
-                        </a>
-                        ';
-                     }
-                  }
-                  ?>
-                  
-               </div>
             </div>
-         </div>
 
-         <!-- office laptop -->
-         <div class="list-laptop-product list-laptop-office">
-            <div class="container-list laptop-office">
-               <h1 class="type">Laptop Văn Phòng</h1>
-               <div class="banner">
-                  <a href="">
-                     <img src="../../asset/picture/product/banner-brand/banner-Hoctapvanphong-laptop.jpg" alt="">
-                  </a>
-               </div>
-
-               <button class="btn-type-laptop-office" id="laptop-dell">Dell</button>
-
-               <div class="bottom-container">
+            <div class="bottom-container">
                <?php
 
-                  $sql = "SELECT * FROM sanpham WHERE LoaiSP = 'LT' AND MaLoai = 'Dell'";
+               $sql = "SELECT * FROM sanpham WHERE LoaiSP = 'LT' AND maSP NOT LIKE 'Out_' AND MaLoai = 'Macbook'";
+               $stmt = mysqli_stmt_init($conn);
+               if(!mysqli_stmt_prepare($stmt,$sql)){
+                  echo 'Errol';
+               } else{
+                  mysqli_stmt_execute($stmt);
+                  $result = mysqli_stmt_get_result($stmt);
+
+                  while($row = mysqli_fetch_assoc($result)){
+                     echo '
+                     <a href="../product-details/product-details.php?id='.$row["maSP"].'">
+                        <div class="menu-card">
+                           <div class="imga">
+                              <img src="../../asset/picture/product/laptop/macbook/'.$row["Anh"].'" alt="">
+                           </div>
+                           <div class="bottom">
+                              <h3 class="title">'.$row["TenSP"].'</h3>
+                              <p class="detail">'.$row["MoTa"].'</p>
+                              <p class="coins" style = "color: red;">'.number_format($row["Gia"],0, ',', '.').' VND</p>
+                           </div>
+                        </div>
+                     </a>
+                     ';
+                  }
+               }
+               ?>
+               
+            </div>
+         </div>
+      </div>
+
+      <!-- office laptop -->
+      <div class="list-laptop-product list-laptop-office">
+         <div class="container-list laptop-office">
+            <h1 class="type">Laptop Văn Phòng</h1>
+            <div class="banner">
+               <a href="">
+                  <img src="../../asset/picture/product/banner-brand/banner-Hoctapvanphong-laptop.jpg" alt="">
+               </a>
+            </div>
+
+            <button class="btn-type-laptop-office" id="laptop-dell">Dell</button>
+
+            <div class="bottom-container">
+            <?php
+
+               $sql = "SELECT * FROM sanpham WHERE LoaiSP = 'LT' AND MaLoai = 'Dell'";
+               $stmt = mysqli_stmt_init($conn);
+               if(!mysqli_stmt_prepare($stmt,$sql)){
+                  echo 'Errol';
+               } else{
+                  mysqli_stmt_execute($stmt);
+                  $result = mysqli_stmt_get_result($stmt);
+                  $i = 0;
+
+                  while($row = mysqli_fetch_assoc($result)){
+                     $i++;
+                     echo '
+                     <a href="../product-details/product-details.php?id='.$row["maSP"].'">
+                        <div class="menu-card">
+                        <div class="imga">
+                           <img src="../../asset/picture/product/laptop/dell/'.$row["Anh"].'" alt="">
+                        </div>
+                        <div class="bottom">
+                           <h3 class="title">'.$row["TenSP"].'</h3>
+                           <p class="detail">'.$row["MoTa"].'</p>
+                           <p class="coins" style = "color:red;">'.number_format($row["Gia"],0, ',', '.').' VND</p>
+                        </div>
+                        </div>
+                     </a>
+                     ';
+                     if($i == 14)
+                        break;
+                  }
+               }
+               ?>
+               
+               <div class="all-laptop">
+               <a href="../all-product/all-product.php?loai=<?php echo $row['LoaiSP'];?>&maloai=<?php echo $row['MaLoai'];?>">
+                  <button>Xem tất cả
+                     <i class="fa-solid fa-angle-right" style="padding-left:10px;"></i>
+                  </button>
+               </a>
+               </div>
+            </div>
+
+            <!-- --------- -->
+            <button class="btn-type-laptop-office" id="laptop-asus">Asus</button>
+
+            <div class="bottom-container">
+               <?php
+
+                  $sql = "SELECT * FROM sanpham WHERE LoaiSP = 'LT' AND MaLoai = 'Asus'";
                   $stmt = mysqli_stmt_init($conn);
                   if(!mysqli_stmt_prepare($stmt,$sql)){
                      echo 'Errol';
@@ -497,12 +542,12 @@
                         <a href="../product-details/product-details.php?id='.$row["maSP"].'">
                            <div class="menu-card">
                            <div class="imga">
-                              <img src="../../asset/picture/product/laptop/dell/'.$row["Anh"].'" alt="">
+                              <img src="../../asset/picture/product/laptop/asus/'.$row["Anh"].'" alt="">
                            </div>
                            <div class="bottom">
                               <h3 class="title">'.$row["TenSP"].'</h3>
                               <p class="detail">'.$row["MoTa"].'</p>
-                              <p class="coins">'.$row["Gia"].'</p>
+                              <p class="coins" style = "color: red;">'.number_format($row["Gia"],0, ',', '.').' VND</p>
                            </div>
                            </div>
                         </a>
@@ -511,65 +556,18 @@
                            break;
                      }
                   }
-                  ?>
-                  
-                  <div class="all-laptop">
-                  <a href="../all-product/all-product.php?loai=<?php echo $row['LoaiSP'];?>&maloai=<?php echo $row['MaLoai'];?>">
-                     <button>Xem tất cả
-                        <i class="fa-solid fa-angle-right" style="padding-left:10px;"></i>
-                     </button>
-                  </a>
-                  </div>
-               </div>
-
-               <!-- --------- -->
-               <button class="btn-type-laptop-office" id="laptop-asus">Asus</button>
-
-               <div class="bottom-container">
-                  <?php
-
-                     $sql = "SELECT * FROM sanpham WHERE LoaiSP = 'LT' AND MaLoai = 'Asus'";
-                     $stmt = mysqli_stmt_init($conn);
-                     if(!mysqli_stmt_prepare($stmt,$sql)){
-                        echo 'Errol';
-                     } else{
-                        mysqli_stmt_execute($stmt);
-                        $result = mysqli_stmt_get_result($stmt);
-                        $i = 0;
-
-                        while($row = mysqli_fetch_assoc($result)){
-                           $i++;
-                           echo '
-                           <a href="../product-details/product-details.php?id='.$row["maSP"].'">
-                              <div class="menu-card">
-                              <div class="imga">
-                                 <img src="../../asset/picture/product/laptop/asus/'.$row["Anh"].'" alt="">
-                              </div>
-                              <div class="bottom">
-                                 <h3 class="title">'.$row["TenSP"].'</h3>
-                                 <p class="detail">'.$row["MoTa"].'</p>
-                                 <p class="coins">'.$row["Gia"].'</p>
-                              </div>
-                              </div>
-                           </a>
-                           ';
-                           if($i == 14)
-                              break;
-                        }
-                     }
-                  ?>
-                  
-                  <div class="all-laptop">
-                  <a href="../all-product/all-product.php?loai=<?php echo $row['LoaiSP'];?>&maloai=<?php echo $row['MaLoai'];?>">
-                     <button>Xem tất cả
-                        <i class="fa-solid fa-angle-right" style="padding-left:10px;"></i>
-                     </button>
-                  <a href="../all-product/all-product.php?loai=<?php echo $row['LoaiSP'];?>&maloai=<?php echo $row['MaLoai'];?>">
-                  </div>
+               ?>
+               
+               <div class="all-laptop">
+               <a href="../all-product/all-product.php?loai=<?php echo $row['LoaiSP'];?>&maloai=<?php echo $row['MaLoai'];?>">
+                  <button>Xem tất cả
+                     <i class="fa-solid fa-angle-right" style="padding-left:10px;"></i>
+                  </button>
+               <a href="../all-product/all-product.php?loai=<?php echo $row['LoaiSP'];?>&maloai=<?php echo $row['MaLoai'];?>">
                </div>
             </div>
          </div>
-      
+      </div>  
       <!-- End Laptop Product -->
 
       <!-- Start Screen Product -->
@@ -598,7 +596,7 @@
                         <div class="bottom">
                            <p class="title">'.$row["TenSP"].'</p>
                            <p class="details">'.$row["MoTa"].'</p>
-                           <p class="price">'.$row["Gia"].' đ</p>
+                           <p class="price" style = "color: red;">'.number_format($row["Gia"],0, ',', '.').' VND</p>
                         </div>
                      </div>
                   </a>
@@ -662,7 +660,7 @@
                         <div class="bottom">
                            <h3 class="title">'.$row["TenSP"].'</h3>
                            <p class="detail">'.$row["MoTa"].'</p>
-                           <p class="coins">'.$row["Gia"].'</p>
+                           <p class="coins" style = "color:red;">'.number_format($row["Gia"],0, ',', '.').' VND</p>
                         </div>
                         </div>
                      </a>
@@ -727,7 +725,7 @@
                         <div class="bottom">
                            <h3 class="title">'.$row["TenSP"].'</h3>
                            <p class="detail">'.$row["MoTa"].'</p>
-                           <p class="coins">'.$row["Gia"].'</p>
+                           <p class="coins" style = "color:red;">'.number_format($row["Gia"],0, ',', '.').' VND</p>
                         </div>
                         </div>
                      </a>
@@ -778,7 +776,7 @@
                         <div class="bottom">
                            <p class="title">'.$row["TenSP"].'</p>
                            <p class="details">'.$row["MoTa"].'</p>
-                           <p class="price">'.$row["Gia"].' đ</p>
+                           <p class="price" style = "color:red;">'.number_format($row["Gia"],0, ',', '.').' VND</p>
                         </div>
                      </div>
                   </a>
@@ -878,42 +876,21 @@
    <!-- End Model -->
 
    <!-- Start Search -->
-   <div class="search js-search">
-      <div class="search-container">
-         <div class="close-search js-close-search">
-            <i class="fa-solid fa-xmark"></i>
-         </div>
-         <input type="search" name="" id="" class="input-search" placeholder="Bạn muốn tìm kiếm gì?">
-         <div class="search-icon-form js-search-icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
-         </div>
-      </div>
-   </div>
+   <?php include_once '../../php/formSearch.php'; ?>
    <!-- End Search -->
-
-   <!-- Start Cart Shopping -->
-   <div class="shopping-form js-shopping-form">
-      <div class="close-shopping-form js-close-shopping-form">
-         <i class="fa-solid fa-xmark"></i>
-      </div>
-      <h2 class="shopping-form-text">
-         Giỏ hàng
-      </h2>
-   </div>
-   <!-- End Cart Shopping -->
 
    <!--Script -->
    <script
-     type="text/javascript"
-     src="https://code.jquery.com/jquery-1.11.0.min.js"
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
    ></script>
    <script
-     type="text/javascript"
-     src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
    ></script>
    <script
-     type="text/javascript"
-     src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
    ></script>
    <script src="../../asset/js/script.js"></script>
    <script src="../../asset/js/product.js"></script>

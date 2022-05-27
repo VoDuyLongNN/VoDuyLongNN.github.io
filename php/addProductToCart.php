@@ -47,14 +47,24 @@
    session_start();
    include 'config.php';
 
-   $idKH = $_SESSION['idUser'];
    $idSP = $_GET['idAdd'];
+   if(isset($_SESSION['idUser']))
+   {
+      $idKH = $_SESSION['idUser'];
 
 
-   $add = "INSERT INTO giohang (idKhachHang, idSanPham) VALUES('$idKH', '$idSP')";
-   $conn->query($add);
+      $add = "INSERT INTO giohang (idKhachHang, idSanPham) VALUES('$idKH', '$idSP')";
+      $conn->query($add);
 
-   echo'
-      <center style = "font-size: 25px">Đã thêm vào giỏ hàng</center>
+      echo'
+         <center style = "font-size: 25px">Đã thêm vào giỏ hàng</center>
+         <a href="../web-page/product-details/product-details.php?id='.$idSP.'"><button style = "">Quay lại</button></a>
+      ';
+   }
+   else
+      echo '
+      <center style = "font-size: 25px">Yêu cầu đăng nhập</center>
       <a href="../web-page/product-details/product-details.php?id='.$idSP.'"><button style = "">Quay lại</button></a>
-   ';
+      ';
+      
+   

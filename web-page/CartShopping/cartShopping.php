@@ -64,6 +64,8 @@
 
       .item .right .quantity{
          padding: 40px 0;
+         font-weight: bold;
+         color: red;
       }
 
       .order{
@@ -264,7 +266,7 @@
                         <div class="right">
                            <p class="name">'.$row2["TenSP"].'</p>
                            <p class="price">'.$row2["MoTa"].'</p>
-                           <p class="quantity">'.$row2["Gia"].'</p>
+                           <p class="quantity">'.number_format($row2["Gia"],0, ',', '.').' VND</p>
                            <a href="../../php/delete.php?id='.$row2["maSP"].'"><button class = "delete">Xóa</button></a>
                         </div>
                      </div>
@@ -292,16 +294,14 @@
    ?>
    </div>
 
-
-
    <div style = "width: 100%;
          display: flex;
          justify-content: center;
          padding: 30px 0;">
-      <p>Tổng Tiền: <?php echo $_SESSION['tongTien']; ?> đ</p>
+      <p>Tổng Tiền: <?php echo number_format($_SESSION['tongTien'],0, ',', '.'); ?> VND</p>
    </div>
    <div class = "order js-order">
-      <a href="">
+      <a href="../order/order.php">
          <button>Đặt Hàng</button>
       </a>
    </div>
@@ -310,6 +310,7 @@
       include_once('../../php/formSearch.php');
       include_once('../../php/model.php');
    ?>
+   
    <script src="../../asset/js/script.js"></script>
 
 </body>

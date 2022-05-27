@@ -158,7 +158,7 @@
          <h1 class="product-name"><?php echo $row_sql["TenSP"]; ?></h1>
          <div class="price">
             <p class="cost">38.990.000 đ</p>
-            <p class="sale"><?php echo $row_sql["Gia"]; ?> đ</p>
+            <p class="sale"><?php echo number_format($row_sql["Gia"],0, ',', '.'); ?> VND</p>
             <span class="installment">
                Trả góp 0%
             </span>
@@ -188,7 +188,11 @@
                ';
             ?>
          </button>
-         <button class="btn-buy-now btn-shopping">mua ngay</button>
+         <a href="../order/order.php">
+            <button class="btn-buy-now btn-shopping">
+               mua ngay
+            </button>
+         </a>
       </div>
    </div>
 
@@ -415,46 +419,8 @@
    <!-- End Model -->
 
    <!-- Start Search -->
-   <div class="search js-search">
-      <div class="search-container">
-         <div class="close-search js-close-search">
-            <i class="fa-solid fa-xmark"></i>
-         </div>
-         <input type="search" name="" id="" class="input-search" placeholder="Bạn muốn tìm kiếm gì?">
-         <div class="search-icon-form js-search-icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
-         </div>
-      </div>
-   </div>
+   <?php include_once '../../php/formSearch.php'; ?>
    <!-- End Search -->
-
-   <!-- Start Cart Shopping -->
-   <div class="shopping-form js-shopping-form" style = "width: 200px; padding: 30px 30px">
-      <div class="close-shopping-form js-close-shopping-form">
-         <i class="fa-solid fa-xmark"></i>
-      </div>
-      <h2 class="shopping-form-text">
-         Giỏ hàng
-      </h2>
-
-      <div class = "main-content" style = "display: flex; justify-content: center; align-items: center; padding-top: 30px;">
-         <?php
-            if($add == 'true'){
-               echo '
-                  <div style = "width: 50%;"><img src="../../asset/picture/product/'.$loaisp.'/'.$row_sql["Anh"].' ?>" alt="" style = "width: 200px; height: auto;"></div>
-                  <div class = "right" style = "width: 50%; height: 100%;">
-                     <p>'.$row_sql["TenSP"].'</p>
-                     <p>'.$row_sql["Gia"].'</p>
-
-                  </div>
-               ';
-            }
-
-         ?>
-      </div>
-
-   </div>
-   <!-- End Cart Shopping -->
 
    <script src="../../asset/js/script.js"></script>
    
