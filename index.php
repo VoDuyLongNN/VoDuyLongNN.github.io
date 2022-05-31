@@ -128,7 +128,7 @@
 
    <div class = "responsive">
       <div>
-         <p style = "text-align: center;">Kích thước màn hình không phù hợp. Vui lòng truy cập trên laptop</p>
+         <p>Kích thước màn hình không phù hợp. </br> Vui lòng truy cập trên laptop</p>
          <button class = "js-responsive">OK</button>
       </div>
    </div>

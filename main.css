@@ -673,7 +673,7 @@ footer ul a{
    text-align: center;
 }
 
-p.responsive{
+div.responsive{
    display: none;
 }
 
@@ -685,10 +685,7 @@ p.responsive{
    div.responsive{
       max-width: 740px;
       height: 100%;
-      padding: 0 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: block;
       flex-wrap: wrap;
       background-color: #fff;
       position: fixed;
@@ -701,9 +698,7 @@ p.responsive{
    }
 
    div.responsive button{
-      margin-left: 50%;
       padding: 10px 20px;
-      transform: translate(-50%);
       margin-top: 20px;
       background-color: #fff;
       border: 1px solid #000;
