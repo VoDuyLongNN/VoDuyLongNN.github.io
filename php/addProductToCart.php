@@ -56,6 +56,7 @@
       $add = "INSERT INTO giohang (idKhachHang, idSanPham) VALUES('$idKH', '$idSP')";
       $conn->query($add);
 
+      
       echo'
          <center style = "font-size: 25px">Đã thêm vào giỏ hàng</center>
          <a href="../web-page/product-details/product-details.php?id='.$idSP.'"><button style = "">Quay lại</button></a>

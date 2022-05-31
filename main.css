@@ -672,3 +672,48 @@ footer ul a{
    text-transform: capitalize;
    text-align: center;
 }
+
+p.responsive{
+   display: none;
+}
+
+@media  (max-width: 740px) {
+   html{
+      width: 100%;
+      height: 100%;
+   }
+   div.responsive{
+      max-width: 740px;
+      height: 100%;
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      background-color: #fff;
+      position: fixed;
+      z-index: 99;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      font-size: 20px;
+   }
+
+   div.responsive button{
+      margin-left: 50%;
+      padding: 10px 20px;
+      transform: translate(-50%);
+      margin-top: 20px;
+      background-color: #fff;
+      border: 1px solid #000;
+      color: #000;
+      cursor: pointer;
+      transition: all linear 0.5s;
+   }
+
+   div.responsive button:hover{
+      background-color: #000;
+      color: #fff;
+   }
+}

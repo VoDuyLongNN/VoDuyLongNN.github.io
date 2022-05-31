@@ -126,7 +126,19 @@
    </header>
    <!-- End Header -->
 
-  
+   <div class = "responsive">
+      <div>
+         <p style = "text-align: center;">Kích thước màn hình không phù hợp. Vui lòng truy cập trên laptop</p>
+         <button class = "js-responsive">OK</button>
+      </div>
+   </div>
+
+   <script>
+      const btnResponsive = document.querySelector('.js-responsive');
+      btnResponsive.addEventListener('click', function(){
+         alert("OK rồi thì mở lap lên nào 😒");
+      })
+   </script>
 
    <!-- Start Banner -->
    <section class="banner" id="header">
@@ -332,6 +344,7 @@
       </div>
    </section>
    <!-- End Banner Brand -->
+   
 
    <!-- Start Footer -->
    <footer>
@@ -514,6 +527,8 @@
    ></script>
 
    <script src="./asset/js/slickSlider.js"></script>
+
+  
 
 </body>
 </html>

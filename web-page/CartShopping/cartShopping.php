@@ -300,11 +300,30 @@
          padding: 30px 0;">
       <p>Tổng Tiền: <?php echo number_format($_SESSION['tongTien'],0, ',', '.'); ?> VND</p>
    </div>
-   <div class = "order js-order">
-      <a href="../order/order.php">
+   <?php
+      if($_SESSION['tongTien'] != 0)
+      echo '
+      <div class = "order js-order">
+         <a href="../order/order.php">
          <button>Đặt Hàng</button>
-      </a>
-   </div>
+         </a>
+      </div>
+      ';
+      else
+         echo'
+            <div class = "order js-order">
+            <button class = "submit">Đặt Hàng</button>
+            </div>
+         ';
+   ?>
+
+   <script>
+      const btnOrder = document.querySelector('.submit')
+      btnOrder.addEventListener('click', function(){
+         alert("Hông có gì hết mà đặt hàng ?");
+      })
+   </script>
+      
    <?php
       include_once('../../php/footer.php');
       include_once('../../php/formSearch.php');

@@ -30,6 +30,3 @@ function hideFormSearch(){
 
 searchIcon.addEventListener('click', showFormSearch);
 closeSearchForm.addEventListener('click', hideFormSearch);
-
-
-
